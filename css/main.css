@@ -196,11 +196,11 @@ iframe {
   padding: 55px 55px 37px 55px;
 
 /* FUNDO VERMELHO DE LOGIN*/
-  background: #a22428;
-  background: -webkit-linear-gradient(top, #a22428, #a22428);
-  background: -o-linear-gradient(top, #a22428, #a22428);
-  background: -moz-linear-gradient(top, #a22428, #a22428);
-  background: linear-gradient(top, #a22428, #a22428);
+  background: #8B0000;
+  background: -webkit-linear-gradient(top, #a22428, #FA8072);
+  background: -o-linear-gradient(top, #a22428, #FA8072);
+  background: -moz-linear-gradient(top, #a22428, #FA8072);
+  background: linear-gradient(top, #a22428, #FA8072);
 }
 
 
@@ -426,11 +426,11 @@ iframe {
   height: 50px;
   border-radius: 25px;
 
-  background: #9152f8;
-  background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
-  background: -o-linear-gradient(bottom, #7579ff, #b224ef);
-  background: -moz-linear-gradient(bottom, #7579ff, #b224ef);
-  background: linear-gradient(bottom, #7579ff, #b224ef);
+  background: #B22222;
+  background: -webkit-linear-gradient(bottom, #800000, #800000);
+  background: -o-linear-gradient(bottom, #800000, #800000);
+  background: -moz-linear-gradient(bottom, #800000, #800000);
+  background: linear-gradient(bottom, #800000, #800000);
   position: relative;
   z-index: 1;
 
