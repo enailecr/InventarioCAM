@@ -583,9 +583,6 @@
 .zmdi-lamp:before {
   content: '\f189';
 }
-.zmdi-landscape:before {
-  content: '\f18a';
-}
 .zmdi-layers-off:before {
   content: '\f18b';
 }
@@ -2913,9 +2910,6 @@
 }
 .zmdi-lamp:before {
   content: '\f189';
-}
-.zmdi-landscape:before {
-  content: '\f18a';
 }
 .zmdi-layers-off:before {
   content: '\f18b';

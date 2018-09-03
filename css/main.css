@@ -226,6 +226,7 @@ iframe {
   height: 120px;
   border-radius: 50%;
   background-color: #fff;
+ background-image: url(../images/teste.png);
   margin: 0 auto;
 }
 
