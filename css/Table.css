@@ -48,3 +48,30 @@ th, td {
   height:32px;
   width:260px;
 }
+#botao{ text-align: center }
+.butn {
+  background: #FA8072;
+  background-image: -webkit-linear-gradient(top, #FA8072, #a22428);
+  background-image: -moz-linear-gradient(top, #FA8072, #a22428);
+  background-image: -ms-linear-gradient(top, #FA8072, #a22428);
+  background-image: -o-linear-gradient(top, #FA8072, #a22428);
+  background-image: linear-gradient(to bottom, #FA8072, #a22428);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.butn:hover {
+  background: #eb0707;
+  background-image: -webkit-linear-gradient(top, #eb0707, #d40b0b);
+  background-image: -moz-linear-gradient(top, #eb0707, #d40b0b);
+  background-image: -ms-linear-gradient(top, #eb0707, #d40b0b);
+  background-image: -o-linear-gradient(top, #eb0707, #d40b0b);
+  background-image: linear-gradient(to bottom, #eb0707, #d40b0b);
+  text-decoration: none;
+}
