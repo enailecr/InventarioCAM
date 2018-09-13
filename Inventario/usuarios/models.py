@@ -11,7 +11,7 @@ class Usuario(models.Model):
     fkpermissao = models.ForeignKey('Permissao', on_delete=models.CASCADE,)
 
     def __str__(self):
-        self.nome
+        return self.nome
 
 class Permissao(models.Model):
     tipo = models.CharField(max_length=45, blank=False, null=False)

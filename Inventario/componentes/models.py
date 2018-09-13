@@ -9,7 +9,7 @@ class Componente(models.Model):
     fkpermissao = models.ForeignKey('TipoComponente', on_delete=models.CASCADE,)
 
     def __str__(self):
-        self.nome
+        return self.nome
 
 class TipoComponente(models.Model):
     tipo = models.CharField(max_length=45, blank=False, null=False)

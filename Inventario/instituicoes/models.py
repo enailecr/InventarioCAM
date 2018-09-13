@@ -19,7 +19,7 @@ class Instituicao(models.Model):
     contatos = models.ManyToManyField(Contato, blank=True)
 
     def __str__(self):
-        self.nome
+        return self.nome
 
 class Unidade(models.Model):
     sigla = models.CharField(max_length=35, blank=False, null=False)
