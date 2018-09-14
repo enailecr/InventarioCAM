@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Usuario
 from .forms import UsuarioForm
-# Create your views here.
 
 def login(request):
     return render(request, 'login.html')

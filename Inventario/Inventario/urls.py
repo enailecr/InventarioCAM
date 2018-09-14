@@ -1,28 +1,13 @@
-"""Inventario URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path, include
 from .views import home
 
 urlpatterns = [
     path(r'', home),
-#    path(r'componentes/', include('componentes.urls')),
-#    path(r'contatos/', include('contatos.urls')),
-#    path(r'dispositivos/', include('dispositivos.urls')),
-#    path(r'instituicoes/', include('instituicoes.urls')),
+    path(r'componentes/', include('componentes.urls')),
+    path(r'contatos/', include('contatos.urls')),
+    path(r'dispositivos/', include('dispositivos.urls')),
+    path(r'instituicoes/', include('instituicoes.urls')),
 #    path(r'projetos/', include('projetos.urls')),
     path(r'usuarios/', include('usuarios.urls')),
     path('admin/', admin.site.urls),
