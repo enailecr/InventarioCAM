@@ -34,5 +34,8 @@ class Unidade(models.Model):
     estado = models.CharField(max_length=2, blank=True, null=True)
     cidade = models.CharField(max_length=45, blank=True, null=True)
     posicaogeo = models.CharField(max_length=85, blank=True, null=True)
-    fkinstituicao = models.ForeignKey('Instituicao', on_delete=models.CASCADE,)
+    instituicao = models.ForeignKey('Instituicao', on_delete=models.CASCADE,)
     contatos = models.ManyToManyField(Contato, blank=True)
+
+    def __str__(self):
+        return self.nome

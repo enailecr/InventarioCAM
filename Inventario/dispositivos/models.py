@@ -8,10 +8,16 @@ from instituicoes.models import Unidade
 class Dispositivo(models.Model):
     ip = models.CharField(max_length=25, blank=True, null=True)
     ipvirtual = models.CharField(max_length=25, blank=False, null=False)
-    fkstatus = models.ForeignKey('StatusDispositivos', on_delete=models.CASCADE,)
-    fkprojeto = models.ForeignKey(Projeto, on_delete=models.CASCADE,)
-    fkcomponente = models.ForeignKey(Componente, on_delete=models.CASCADE,)
-    fkunidade = models.ForeignKey(Unidade, on_delete=models.CASCADE,)
+    status = models.ForeignKey('StatusDispositivos', on_delete=models.CASCADE,)
+    projeto = models.ForeignKey(Projeto, on_delete=models.CASCADE,)
+    componente = models.ForeignKey(Componente, on_delete=models.CASCADE,)
+    unidade = models.ForeignKey(Unidade, on_delete=models.CASCADE,)
+
+    def __str__(self):
+        return self.ip
 
 class StatusDispositivos(models.Model):
     status = models.CharField(max_length=45, blank=False, null=False)
+
+    def __str__(self):
+        return self.status
