@@ -1,10 +1,11 @@
 from django.contrib import admin
-from django.urls import path, include
 from django.urls import path
-from .views import login, add
+from django.conf.urls import include, url
+from .views import login, add, usuario_novo
 
 urlpatterns = [
     path(r'login/', login),
     path(r'add/',add),
-    path('accounts/', include('django.contrib.auth.urls')),
+    url(r'usuario-novo/',usuario_novo, name='usuario_novo'),
+    # path('accounts/', include('django.contrib.auth.urls')),
 ]
