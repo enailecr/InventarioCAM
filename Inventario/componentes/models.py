@@ -6,7 +6,7 @@ class Componente(models.Model):
     sigla = models.CharField(max_length=35, blank=False, null=False)
     nome = models.CharField(max_length=255, blank=False, null=False)
     versao = models.CharField(max_length=10, blank=True, null=True)
-    permissao = models.ForeignKey('TipoComponente', on_delete=models.CASCADE,)
+    tipo = models.ForeignKey('TipoComponente', on_delete=models.CASCADE,)
 
     def __str__(self):
         return self.nome
