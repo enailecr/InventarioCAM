@@ -53,18 +53,12 @@
 	  </thead>
 
 	  <tbody>
-		<tr>
-		  <td>fone2014</td>
-		  <td>FONE@RNP2014</td>
-		</tr>
-
-		<tr>
-		  <td>fone2012</td>
-		  <td>FONE@RNP2012</td>
-		</tr>
-
-
-
+			{% for projeto in projetos %}
+				<tr>
+						<td>projeto.sigla</td>
+						<td>projeto.nome</td>
+				</tr>
+			{% endfor %}
 	  </tbody>
 	</table>
 	<form>
