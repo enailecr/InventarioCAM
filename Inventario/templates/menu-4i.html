@@ -46,32 +46,16 @@
   <caption>Invent�rio - CAM Tecnologia</caption>
   <thead>
     <tr>
-      <th><font color="#FFFFFF">Institui��o</font></th>
-      <th><font color="#FFFFFF">Unidade</font></th>
-      <th><font color="#FFFFFF">Projeto</font></th>
-      <th><font color="#FFFFFF">Componente</font></th>
-      <th><font color="#FFFFFF">IP</font></th>
-      <th><font color="#FFFFFF">Core</font></th>
-      <th><font color="#FFFFFF">Web</font></th>
-      <th><font color="#FFFFFF">Extras</font></th>
-      <th><font color="#FFFFFF">Atualizado</font></th>
-      <th><font color="#FFFFFF">Status</font></th>
+      <th><font color="#FFFFFF">Sigla da Instituição</font></th>
+      <th><font color="#FFFFFF">Nome</font></th>
     </tr>
   </thead>
 
   <tbody>
-		{% for dispositivo in dispositivos %}
+		{% for instituicao in instituicoes %}
 			<tr>
-					<td>dispositivo.unidade.instituicao.sigla</td>
-					<td>dispositivo.unidade.sigla</td>
-					<td>dispositivo.projeto.nome</td>
-					<td>dispositivo.componente.nome</td>
-					<td>dispositivo.ip</td>
-					<td></td>
-					<td></td>
-					<td>dispositivo.ipvirtual</td>
-					<td></td>
-					<td>dispositivo.status.status</td>
+					<td>instituicao.sigla</td>
+					<td>instituicao.nome</td>
 			</tr>
 		{% endfor %}
 
@@ -81,6 +65,7 @@
    <div id="botao">
       <button name="add" class="butn">Adicionar</button>
    </div>
+</form>
 		</div>
 </body>
 </html>

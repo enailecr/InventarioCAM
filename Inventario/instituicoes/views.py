@@ -15,7 +15,7 @@ def add_unid(request):
 
 def list_inst(request):
     instituicoes = Instituicao.objects.all()
-    return render(request, 'menu-3d.html', {'instituicoes': instituicoes})
+    return render(request, 'menu-4i.html', {'instituicoes': instituicoes})
 
 def list_unid(request):
     unidades = Unidade.objects.all()
