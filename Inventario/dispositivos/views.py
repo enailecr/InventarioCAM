@@ -17,3 +17,16 @@ def dispositivo_novo(request):
     if form.is_valid():
         form.save()
     return redirect ('/dispositivos/')
+
+def dispositivo_edita(request, id):
+    data = {}
+    dispositivo = Dispositivo.objects.get(id=id)
+    form = DispositivoForm(request.POST or None, instance=dispositivo)
+    data['dispositivo'] = dispositivo
+    data['form'] = form
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('/dispositivos/')
+    else:
+        return render(request, 'editaDispositivo.html')

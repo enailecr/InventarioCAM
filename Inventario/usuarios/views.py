@@ -20,3 +20,16 @@ def usuario_novo(request):
     if form.is_valid():
         form.save()
     return redirect ('/usuarios/login/')
+
+def usuario_edita(request, id):
+    data = {}
+    usuario = Usuario.objects.get(id=id)
+    form = UsuarioForm(request.POST or None, instance=usuario)
+    data['usuario'] = usuario
+    data['form'] = form
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('/usuarios/') #mudar
+    else:
+        return render(request, 'editaPerfil.html')

@@ -17,3 +17,16 @@ def contato_novo(request):
     if form.is_valid():
         form.save()
     return redirect ('/contatos/')
+
+def contato_edita(request, id):
+    data = {}
+    contato = Contato.objects.get(id=id)
+    form = ContatoForm(request.POST or None, instance=contato)
+    data['contato'] = contato
+    data['form'] = form
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('/contatos/')
+    else:
+        return render(request, 'editaContatos.html')

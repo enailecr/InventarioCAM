@@ -17,3 +17,16 @@ def add(request):
 def list(request):
     componentes = Componente.objects.all()
     return render(request, 'menu-2c.html', {'componentes': componentes})
+
+def componente_edita(request, id):
+    data = {}
+    componente = Componente.objects.get(id=id)
+    form = ComponenteForm(request.POST or None, instance=componente)
+    data['componente'] = componente
+    data['form'] = form
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('/componentes/')
+    else:
+        return render(request, 'editaComponente.html')

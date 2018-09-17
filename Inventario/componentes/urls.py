@@ -1,9 +1,10 @@
 from django.urls import path
 from django.conf.urls import include, url
-from .views import  add, componente_novo, list
+from .views import  add, componente_novo, list, componente_edita
 
 urlpatterns = [
     path(r'add/',add),
     path(r'', list),
     url(r'componente-novo/',componente_novo, name='componente_novo'),
+    url(r'componente-edita/(?P<id>\d+)/$', componente_edita, name='componente_edita'),
 ]

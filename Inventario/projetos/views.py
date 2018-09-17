@@ -17,3 +17,16 @@ def projeto_novo(request):
     if form.is_valid():
         form.save()
     return redirect ('/projetos/')
+
+def projeto_edita(request, id):
+    data = {}
+    projeto = Projeto.objects.get(id=id)
+    form = ProjetoForm(request.POST or None, instance=projeto)
+    data['projeto'] = projeto
+    data['form'] = form
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('/projetos/')
+    else:
+        return render(request, 'editaProjetos.html')

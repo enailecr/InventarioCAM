@@ -32,3 +32,29 @@ def unidade_novo(request):
     if form.is_valid():
         form.save()
     return redirect ('/instituicoes/unidades/')
+
+def instituicao_edita(request):
+    data = {}
+    instituicao = Instituicao.objects.get(id=id)
+    form = InstituicaoForm(request.POST or None, instance=instituicao)
+    data['instituicao'] = instituicao
+    data['form'] = form
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+        return redirect ('/instituicoes/')
+    else:
+        return render(request, 'editaInstituicao.html')
+
+def unidade_edita(request):
+    data = {}
+    unidade = Unidade.objects.get(id=id)
+    form = UnidadeForm(request.POST or None, instance=unidade)
+    data['unidade'] = unidade
+    data['form'] = form
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+        return redirect ('/instituicoes/unidades/')
+    else:
+        return render(request, 'editaUnidade.html')
