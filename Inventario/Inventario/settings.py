@@ -133,3 +133,7 @@ STATIC_ROOT = 'static_files'
 STATICFILES_DIRS = [
     'statics',
 ]
+
+LOGIN_URL = '/projetos/'
+LOGIN_REDIRECT_URL = '/projetos/'
+LOGOUT_REDIRECT_URL = '/'
