@@ -30,3 +30,9 @@ def contato_edita(request, id):
             return redirect('/contatos/')
     else:
         return render(request, 'editaContatos.html')
+
+def contato_remove(request, id):
+    contato = Contato.objects.get(id=id)
+    if request.method == 'POST':
+        contato.delete()
+        return redirect('/contatos/')

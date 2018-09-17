@@ -30,3 +30,9 @@ def projeto_edita(request, id):
             return redirect('/projetos/')
     else:
         return render(request, 'editaProjetos.html')
+
+def projeto_remove(request, id):
+    projeto = Projeto.objects.get(id=id)
+    if request.method == 'POST':
+        projeto.delete()
+        return redirect('/projetos/')

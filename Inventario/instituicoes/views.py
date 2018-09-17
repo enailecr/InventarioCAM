@@ -58,3 +58,15 @@ def unidade_edita(request):
         return redirect ('/instituicoes/unidades/')
     else:
         return render(request, 'editaUnidade.html')
+
+def instituicao_remove(request, id):
+    instituicao = Instituicao.objects.get(id=id)
+    if request.method == 'POST':
+        instituicao.delete()
+        return redirect('/instituicoes/')
+
+def unidade_remove(request, id):
+    unidade = Unidade.objects.get(id=id)
+    if request.method == 'POST':
+        unidade.delete()
+        return redirect('/instituicoes/unidades/')

@@ -30,3 +30,9 @@ def dispositivo_edita(request, id):
             return redirect('/dispositivos/')
     else:
         return render(request, 'editaDispositivo.html')
+
+def dispositivo_remove(request, id):
+    dispositivo = Dispositivo.objects.get(id=id)
+    if request.method == 'POST':
+        dispositivo.delete()
+        return redirect('/dispositivos/')

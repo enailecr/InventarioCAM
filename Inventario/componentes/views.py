@@ -30,3 +30,10 @@ def componente_edita(request, id):
             return redirect('/componentes/')
     else:
         return render(request, 'editaComponente.html')
+
+def componente_remove(request, id):
+    componente = Componente.objects.get(id=id)
+    if request.method == 'POST':
+        componente.delete()
+        return redirect('/componentes/')
+    
