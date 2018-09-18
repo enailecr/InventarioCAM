@@ -34,9 +34,9 @@
 					<span class="contact100-form-title">
 						<h2>Cadastro de Usuários</h2>
 					</span>
-
-					<!-- <div class="wrap-input100 validate-input" data-validate = "Name is required">
-						<input class="input100" type="text" name="name" placeholder="Name">
+						{% csrf_token %}
+					<div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100" type="text" name="nome" placeholder="Name">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
@@ -44,7 +44,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "username is required">
-						<input class="input100" type="text" name="username" placeholder="Username">
+						<input class="input100" type="text" name="usuario" placeholder="Username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
@@ -64,15 +64,7 @@
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Telefone is required">
-						<input class="input100" type="text" name="Telefone" placeholder="Telefone">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-phone" aria-hidden="true"></i>
-						</span>
-					</div> -->
-					{% csrf_token %}
-					{{form.as_p}}
+
 					<div class="container-contact100-form-btn">
 						<button class="contact100-form-btn" type="submit">
 							Cadastrar

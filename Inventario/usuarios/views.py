@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Usuario
 from .forms import UsuarioForm
+from django.contrib.auth.models import User
+from django.views.decorators.http import require_POST
 
 def login(request):
     return render(request, 'login.html')
@@ -15,11 +17,17 @@ def list(request):
     usuarios = Usuario.objects.all()
     return render(request, 'lista.html', {'usuarios': usuarios})
 
+@require_POST
 def usuario_novo(request):
-    form = UsuarioForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-    return redirect ('/usuarios/login/')
+    nome = request.POST['nome']
+    email = request.POST['email']
+    senha = request.POST['senha']
+    usuario = request.POST['usuario']
+
+    novoUsuario = User.objects.create_user(username=usuario, email=email, password=senha)
+    novoUsuario.first_name = nome
+    novoUsuario.save()
+    return redirect ('/contas/login/')
 
 def usuario_edita(request, id):
     data = {}
