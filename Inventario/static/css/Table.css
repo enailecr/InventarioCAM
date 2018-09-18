@@ -1,0 +1,77 @@
+body {
+  font: 75%/1.6 "Agency FB", Calibri, "Lucida Console", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
+}
+table {
+  margin:auto;
+  border-collapse: collapse;
+  width: 50em;
+  border: 1px solid #a22428;
+}
+thead {
+  background-color:#a22428;
+  border-top: 1px solid #a22428;
+  border-bottom: 1px solid #a22428;
+}
+tr:hover {
+  background-color:#3d80df;
+  color: #fff;
+}
+thead tr:hover {
+  background-color: transparent;
+  color: inherit;
+}
+tr:nth-child(even) {
+    background-color: #E67F81;
+}
+th {
+  font-weight: normal;
+  text-align: left;
+}
+th, td {
+  padding: 0.1em 1em;
+}
+#divBusca{
+  background-color:#FFFFFF;
+  border:solid 1px;
+  border-radius:15px;
+  width:300px;
+  float:right;
+}
+
+#txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-style:italic;
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:260px;
+}
+#botao{ text-align: center }
+.butn {
+  background: #FA8072;
+  background-image: -webkit-linear-gradient(top, #FA8072, #a22428);
+  background-image: -moz-linear-gradient(top, #FA8072, #a22428);
+  background-image: -ms-linear-gradient(top, #FA8072, #a22428);
+  background-image: -o-linear-gradient(top, #FA8072, #a22428);
+  background-image: linear-gradient(to bottom, #FA8072, #a22428);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.butn:hover {
+  background: #eb0707;
+  background-image: -webkit-linear-gradient(top, #eb0707, #d40b0b);
+  background-image: -moz-linear-gradient(top, #eb0707, #d40b0b);
+  background-image: -ms-linear-gradient(top, #eb0707, #d40b0b);
+  background-image: -o-linear-gradient(top, #eb0707, #d40b0b);
+  background-image: linear-gradient(to bottom, #eb0707, #d40b0b);
+  text-decoration: none;
+}
