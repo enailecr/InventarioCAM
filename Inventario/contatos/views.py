@@ -2,22 +2,27 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Contato
 from .forms import ContatoForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def add(request):
     form = ContatoForm()
     data = {'form' : form}
     return render(request, 'cadastroContato.html', data)
 
+@login_required
 def list(request):
     contatos = Contato.objects.all()
     return render(request, 'lista.html', {'contatos': contatos})
 
+@login_required
 def contato_novo(request):
     form = ContatoForm(request.POST or None)
     if form.is_valid():
         form.save()
     return redirect ('/contatos/')
 
+@login_required
 def contato_edita(request, id):
     data = {}
     contato = Contato.objects.get(id=id)
@@ -31,6 +36,7 @@ def contato_edita(request, id):
     else:
         return render(request, 'editaContatos.html')
 
+@login_required
 def contato_remove(request, id):
     contato = Contato.objects.get(id=id)
     if request.method == 'POST':

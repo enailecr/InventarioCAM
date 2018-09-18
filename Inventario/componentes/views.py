@@ -2,22 +2,27 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Componente
 from .forms import ComponenteForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def componente_novo(request):
     form = Componente(request.POST or None)
     if form.is_valid():
         form.save()
     return redirect ('/componentes/')
 
+@login_required
 def add(request):
     form = ComponenteForm()
     data = {'form' : form}
     return render(request, 'cadastroComponente.html', data)
 
+@login_required
 def list(request):
     componentes = Componente.objects.all()
     return render(request, 'menu-2c.html', {'componentes': componentes})
 
+@login_required
 def componente_edita(request, id):
     data = {}
     componente = Componente.objects.get(id=id)
@@ -31,9 +36,9 @@ def componente_edita(request, id):
     else:
         return render(request, 'editaComponente.html')
 
+@login_required
 def componente_remove(request, id):
     componente = Componente.objects.get(id=id)
     if request.method == 'POST':
         componente.delete()
         return redirect('/componentes/')
-    

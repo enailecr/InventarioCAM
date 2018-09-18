@@ -134,6 +134,6 @@ STATICFILES_DIRS = [
     'statics',
 ]
 
-LOGIN_URL = '/projetos/'
+LOGIN_URL = '/contas/login/'
 LOGIN_REDIRECT_URL = '/projetos/'
 LOGOUT_REDIRECT_URL = '/'

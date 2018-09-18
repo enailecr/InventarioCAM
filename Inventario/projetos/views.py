@@ -2,22 +2,27 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Projeto
 from .forms import ProjetoForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def add(request):
     form = ProjetoForm()
     data = {'form' : form}
     return render(request, 'cadastroProjeto.html', data)
 
+@login_required
 def list(request):
     projetos = Projeto.objects.all()
     return render(request, 'menu-1p.html', {'projetos': projetos})
 
+@login_required
 def projeto_novo(request):
     form = ProjetoForm(request.POST or None)
     if form.is_valid():
         form.save()
     return redirect ('/projetos/')
 
+@login_required
 def projeto_edita(request, id):
     data = {}
     projeto = Projeto.objects.get(id=id)
@@ -31,6 +36,7 @@ def projeto_edita(request, id):
     else:
         return render(request, 'editaProjetos.html')
 
+@login_required
 def projeto_remove(request, id):
     projeto = Projeto.objects.get(id=id)
     if request.method == 'POST':
