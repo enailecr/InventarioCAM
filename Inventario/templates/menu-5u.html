@@ -64,9 +64,9 @@
   <tbody>
 		{% for unidade in unidades %}
 			<tr>
-					<td>unidade.sigla</td>
-          <td>unidade.instituicao.sigla</td>
-					<td>unidade.nome</td>
+					<td>{{unidade.sigla}}</td>
+          <td>{{unidade.instituicao.sigla}}</td>
+					<td>{{unidade.nome}}</td>
 			</tr>
 		{% endfor %}
 

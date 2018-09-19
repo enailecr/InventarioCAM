@@ -65,10 +65,10 @@
   <tbody>
      {% for componente in componentes %}
 			<tr>
-					<td>componente.sigla</td>
-					<td>componente.tipo.tipo</td>
-					<td>componente.nome</td>
-					<td>componente.versao</td>
+					<td>{{componente.sigla}}</td>
+					<td>{{componente.tipo.tipo}}</td>
+					<td>{{componente.nome}}</td>
+					<td>{{componente.versao}}</td>
 			</tr>
 		{% endfor %}
   </tbody>

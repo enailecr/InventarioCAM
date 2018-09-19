@@ -71,16 +71,16 @@
   <tbody>
 		{% for dispositivo in dispositivos %}
 			<tr>
-					<td>dispositivo.unidade.instituicao.sigla</td>
-					<td>dispositivo.unidade.sigla</td>
-					<td>dispositivo.projeto.nome</td>
-					<td>dispositivo.componente.nome</td>
-					<td>dispositivo.ip</td>
+					<td>{{dispositivo.unidade.instituicao.sigla}}</td>
+					<td>{{dispositivo.unidade.sigla}}</td>
+					<td>{{dispositivo.projeto.nome}}</td>
+					<td>{{dispositivo.componente.nome}}</td>
+					<td>{{dispositivo.ip}}</td>
 					<td></td>
 					<td></td>
-					<td>dispositivo.ipvirtual</td>
+					<td>{{dispositivo.ipvirtual}}</td>
 					<td></td>
-					<td>dispositivo.status.status</td>
+					<td>{{dispositivo.status.status}}</td>
 			</tr>
 		{% endfor %}
 
