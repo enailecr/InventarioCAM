@@ -53,16 +53,18 @@
   <caption>Inventário - CAM Tecnologia</caption>
   <thead>
     <tr>
+      <th><font color="#FFFFFF">Sigla da Unidade</font></th>
       <th><font color="#FFFFFF">Sigla da Instituição</font></th>
       <th><font color="#FFFFFF">Nome</font></th>
     </tr>
   </thead>
 
   <tbody>
-		{% for instituicao in instituicoes %}
+		{% for unidade in unidades %}
 			<tr>
-					<td>instituicao.sigla</td>
-					<td>instituicao.nome</td>
+					<td>unidade.sigla</td>
+          <td>unidade.instituicao.sigla</td>
+					<td>unidade.nome</td>
 			</tr>
 		{% endfor %}
 
