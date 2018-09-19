@@ -1,0 +1,5 @@
+<form action="{% url 'contato_novo'%}" method="POST">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit">Cadastrar</button>
+</form>
