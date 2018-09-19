@@ -13,7 +13,7 @@ def add(request):
 @login_required
 def list(request):
     contatos = Contato.objects.all()
-    return render(request, 'lista.html', {'contatos': contatos})
+    return render(request, 'menu-contatos.html', {'contatos': contatos})
 
 @login_required
 def contato_novo(request):
