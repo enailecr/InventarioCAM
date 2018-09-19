@@ -21,3 +21,8 @@ class StatusDispositivos(models.Model):
 
     def __str__(self):
         return self.status
+
+class Anotacao(models.Model):
+    nota = models.CharField(max_length=255, blank=False, null=False)
+    unidade = models.ForeignKey(Unidade, on_delete=models.CASCADE)
+    dispositivo = models.ForeignKey('Dispositivo', on_delete=models.CASCADE, blank=True, null=True)
