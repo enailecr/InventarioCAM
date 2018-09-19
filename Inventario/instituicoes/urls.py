@@ -5,8 +5,8 @@ from .views import list_inst, list_unid, add_inst, add_unid, instituicao_novo, u
 urlpatterns = [
     path(r'', list_inst),
     path(r'unidades/', list_unid),
-    path(r'add-inst/',add_inst),
-    path(r'unidades/add-unid/',add_unid),
+    url(r'add/',add_inst),
+    path(r'unidades/add/',add_unid),
     url(r'instituicao-novo/', instituicao_novo, name='instituicao_novo'),
     url(r'unidades/unidade-novo/', unidade_novo, name='unidade_novo'),
     url(r'instituicao-edita/(?P<id>\d+)/$', instituicao_edita, name='instituicao_edita'),
