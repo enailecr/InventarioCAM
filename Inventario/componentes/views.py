@@ -34,7 +34,7 @@ def componente_edita(request, id):
             form.save()
             return redirect('/componentes/')
     else:
-        return render(request, 'editaComponente.html')
+        return render(request, 'editaComponente.html', data)
 
 @login_required
 def componente_remove(request, id):

@@ -37,8 +37,8 @@ def usuario_edita(request, id):
     data['usuario'] = usuario
     data['form'] = form
     if request.method == 'POST':
-        if form.is_valid():
+        if form.is_valid(): 
             form.save()
             return redirect('/usuarios/') #mudar
     else:
-        return render(request, 'editaPerfil.html')
+        return render(request, 'editaPerfil.html', data)

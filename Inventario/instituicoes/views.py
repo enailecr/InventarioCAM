@@ -52,7 +52,7 @@ def instituicao_edita(request):
             form.save()
         return redirect ('/instituicoes/')
     else:
-        return render(request, 'editaInstituicao.html')
+        return render(request, 'editaInstituicao.html', data)
 
 @login_required
 def unidade_edita(request):
@@ -66,7 +66,7 @@ def unidade_edita(request):
             form.save()
         return redirect ('/instituicoes/unidades/')
     else:
-        return render(request, 'editaUnidade.html')
+        return render(request, 'editaUnidade.html', data)
 
 @login_required
 def instituicao_remove(request, id):
@@ -108,7 +108,7 @@ def nota_edita(request):
             form.save()
         return redirect ('/instituicoes/unidades/notas/')
     else:
-        return render(request, 'editaNota.html')
+        return render(request, 'editaNota.html', data)
 
 @login_required
 def nota_remove(request, id):

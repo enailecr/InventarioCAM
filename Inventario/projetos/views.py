@@ -34,7 +34,7 @@ def projeto_edita(request, id):
             form.save()
             return redirect('/projetos/')
     else:
-        return render(request, 'editaProjetos.html')
+        return render(request, 'editaProjetos.html', data)
 
 @login_required
 def projeto_remove(request, id):

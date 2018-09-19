@@ -34,7 +34,7 @@ def dispositivo_edita(request, id):
             form.save()
             return redirect('/dispositivos/')
     else:
-        return render(request, 'editaDispositivo.html')
+        return render(request, 'editaDispositivo.html', data)
 
 @login_required
 def dispositivo_remove(request, id):
