@@ -81,3 +81,43 @@ def unidade_remove(request, id):
     if request.method == 'POST':
         unidade.delete()
         return redirect('/instituicoes/unidades/')
+
+@login_required
+def nota_novo(request):
+    form = DispositivoForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    return redirect ('/instituicoes/unidades/notas/')
+
+@login_required
+def add_nota(request, idUnidade):
+    form = AnotacaoForm()
+    unidade = Unidade.objects.get(id=id).sigla
+    data = {'form' : form, 'unidade': unidade}
+    return render(request, 'cadastroNota.html', data)
+
+@login_required
+def nota_edita(request):
+    data = {}
+    nota = Anotacao.objects.get(id=id)
+    form = AnotacaoForm(request.POST or None, instance=nota)
+    data['nota'] = nota
+    data['form'] = form
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+        return redirect ('/instituicoes/unidades/notas/')
+    else:
+        return render(request, 'editaNota.html')
+
+@login_required
+def nota_remove(request, id):
+    nota = Anotacao.objects.get(id=id)
+    if request.method == 'POST':
+        nota.delete()
+        return redirect('/instituicoes/unidades/notas/')
+
+@login_required
+def list_notas(request):
+    notas = Nota.objects.all()
+    return render(request, 'menu-6n.html', {'notas': notas})
