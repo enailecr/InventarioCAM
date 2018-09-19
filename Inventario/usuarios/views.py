@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Usuario
-from .forms import UsuarioForm
 from django.contrib.auth.models import User
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
