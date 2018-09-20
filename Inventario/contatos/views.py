@@ -39,6 +39,5 @@ def contato_edita(request, id):
 @login_required
 def contato_remove(request, id):
     contato = Contato.objects.get(id=id)
-    if request.method == 'POST':
-        contato.delete()
-        return redirect('/contatos/')
+    contato.delete()
+    return redirect('/contatos/')

@@ -39,6 +39,5 @@ def dispositivo_edita(request, id):
 @login_required
 def dispositivo_remove(request, id):
     dispositivo = Dispositivo.objects.get(id=id)
-    if request.method == 'POST':
-        dispositivo.delete()
-        return redirect('/dispositivos/')
+    dispositivo.delete()
+    return redirect('/dispositivos/')

@@ -39,6 +39,5 @@ def componente_edita(request, id):
 @login_required
 def componente_remove(request, id):
     componente = Componente.objects.get(id=id)
-    if request.method == 'POST':
-        componente.delete()
-        return redirect('/componentes/')
+    componente.delete()
+    return redirect('/componentes/')

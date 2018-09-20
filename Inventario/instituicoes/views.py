@@ -71,16 +71,14 @@ def unidade_edita(request,id):
 @login_required
 def instituicao_remove(request, id):
     instituicao = Instituicao.objects.get(id=id)
-    if request.method == 'POST':
-        instituicao.delete()
-        return redirect('/instituicoes/')
+    instituicao.delete()
+    return redirect('/instituicoes/')
 
 @login_required
 def unidade_remove(request, id):
     unidade = Unidade.objects.get(id=id)
-    if request.method == 'POST':
-        unidade.delete()
-        return redirect('/instituicoes/unidades/')
+    unidade.delete()
+    return redirect('/instituicoes/unidades/')
 
 @login_required
 def nota_novo(request):
@@ -113,9 +111,8 @@ def nota_edita(request):
 @login_required
 def nota_remove(request, id):
     nota = Anotacao.objects.get(id=id)
-    if request.method == 'POST':
-        nota.delete()
-        return redirect('/instituicoes/unidades/notas/')
+    nota.delete()
+    return redirect('/instituicoes/unidades/notas/')
 
 @login_required
 def list_notas(request):

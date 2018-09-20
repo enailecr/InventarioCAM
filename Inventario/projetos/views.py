@@ -39,6 +39,5 @@ def projeto_edita(request, id):
 @login_required
 def projeto_remove(request, id):
     projeto = Projeto.objects.get(id=id)
-    if request.method == 'POST':
-        projeto.delete()
-        return redirect('/projetos/')
+    projeto.delete()
+    return redirect('/projetos/')
