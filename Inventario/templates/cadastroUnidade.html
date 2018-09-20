@@ -57,7 +57,7 @@
 						#divCenter { 
 								background-color: #e1e1e1; 
 								width: 400px; 
-								height: 385px; 
+								height: 405px; 
 								left: 50%; 
 								margin: -130px 0 0 -210px; 
 								padding:10px;
@@ -67,6 +67,7 @@
 				</head>
 				<body>
 						<div id="divCenter">
+								<h1>Adicionar Unidade:</h1>
        <form action="{% url 'unidade_novo' %}" method="POST">
             {% csrf_token %}
             {{form.as_p}}

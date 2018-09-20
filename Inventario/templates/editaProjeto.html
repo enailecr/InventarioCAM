@@ -57,16 +57,17 @@
 						#divCenter { 
 								background-color: #e1e1e1; 
 								width: 400px; 
-								height: 75px; 
+								height: 85px; 
 								left: 50%; 
 								margin: -130px 0 0 -210px; 
 								padding:10px;
 								position: absolute; 
 								top: 50%; }
-					</style>
+					</style>	
 				</head>
 				<body>
 						<div id="divCenter">
+								<h1>Editar Projeto:</h1>
         <form action="{% url 'projeto_edita' projeto.id %}" method="post">
             {% csrf_token %}
 
