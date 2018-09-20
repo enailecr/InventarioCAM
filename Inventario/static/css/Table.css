@@ -81,3 +81,9 @@ th, td {
   width:20px;
   float: right;
 }
+
+.delete-button{
+  background-image:url("../images/x-button.png");
+  width:20px;
+  float: right;
+}

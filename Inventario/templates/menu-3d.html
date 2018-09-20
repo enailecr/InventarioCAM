@@ -66,6 +66,7 @@
       <th><font color="#FFFFFF">Atualizado</font></th>
       <th><font color="#FFFFFF">Status</font></th>
 			<th></th>
+			<th></th>
     </tr>
   </thead>
 
@@ -83,6 +84,7 @@
 					<td></td>
 					<td>{{dispositivo.status.status}}</td>
 					<td><a href="{% url 'dispositivo_edita' dispositivo.id %}"><input type="button" class="edit-button"></a></td>
+					<td><a href="{% url 'dispositivo_remove' dispositivo.id %}"><input type="button" class="delete-button"></a></td>
 			</tr>
 		{% endfor %}
 

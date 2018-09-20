@@ -59,6 +59,7 @@
       <th><font color="#FFFFFF">Email</font></th>
       <th><font color="#FFFFFF">Telefone</font></th>
 			<th></th>
+			<th></th>
     </tr>
   </thead>
 
@@ -69,6 +70,7 @@
           <td>{{contato.email}}</td>
 					<td>{{contato.telefone}}</td>
 					<td><a href="{% url 'contato_edita' contato.id %}"><input type="button" class="edit-button"></a></td>
+					<td><a href="{% url 'contato_remove' contato.id %}"><input type="button" class="delete-button"></a></td>
 			</tr>
 		{% endfor %}
 
