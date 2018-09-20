@@ -68,7 +68,7 @@
 					<td>{{contato.nome}}</td>
           <td>{{contato.email}}</td>
 					<td>{{contato.telefone}}</td>
-					<td><input type="button" class="edit-button"></td>
+					<td><a href="{% url 'contato_edita' contato.id %}"><input type="button" class="edit-button"></a></td>
 			</tr>
 		{% endfor %}
 

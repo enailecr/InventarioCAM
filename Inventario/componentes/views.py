@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def componente_novo(request):
-    form = Componente(request.POST or None)
+    form = ComponenteForm(request.POST or None)
     if form.is_valid():
         form.save()
     return redirect ('/componentes/')

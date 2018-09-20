@@ -1,0 +1,7 @@
+<form action="{% url 'unidade_edita' unidade.id %}" method="post">
+  {% csrf_token %}
+
+  {{form.as_p}}
+
+  <button type="submit">Salvar alterações</button>
+</form>

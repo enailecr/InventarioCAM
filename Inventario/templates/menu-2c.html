@@ -70,7 +70,7 @@
 					<td>{{componente.tipo.tipo}}</td>
 					<td>{{componente.nome}}</td>
 					<td>{{componente.versao}}</td>
-					<td><input type="button" class="edit-button"></td>
+					<td><a href="{% url 'componente_edita' componente.id %}"><input type="button" class="edit-button"></a></td>
 			</tr>
 		{% endfor %}
   </tbody>

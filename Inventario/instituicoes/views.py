@@ -41,7 +41,7 @@ def unidade_novo(request):
     return redirect ('/instituicoes/unidades/')
 
 @login_required
-def instituicao_edita(request):
+def instituicao_edita(request, id):
     data = {}
     instituicao = Instituicao.objects.get(id=id)
     form = InstituicaoForm(request.POST or None, instance=instituicao)
@@ -55,7 +55,7 @@ def instituicao_edita(request):
         return render(request, 'editaInstituicao.html', data)
 
 @login_required
-def unidade_edita(request):
+def unidade_edita(request,id):
     data = {}
     unidade = Unidade.objects.get(id=id)
     form = UnidadeForm(request.POST or None, instance=unidade)

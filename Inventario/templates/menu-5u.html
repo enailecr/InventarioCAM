@@ -68,7 +68,7 @@
 					<td>{{unidade.sigla}}</td>
           <td>{{unidade.instituicao.sigla}}</td>
 					<td>{{unidade.nome}}</td>
-					<td><input type="button" class="edit-button"></td>
+					<td><a href="{% url 'unidade_edita' unidade.id %}"><input type="button" class="edit-button"></a></td>
 			</tr>
 		{% endfor %}
 
@@ -76,7 +76,7 @@
 </table>
 <form>
    <div id="botao">
-		<a href="/instituicoes/unidades/add/"><input class="butn" type="button" value="Adicionar"></a>
+		<a href="/instituicoes/add-uni"><input class="butn" type="button" value="Adicionar"></a>
    </div>
 </form>
 		</div>

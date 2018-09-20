@@ -34,7 +34,7 @@ def contato_edita(request, id):
             form.save()
             return redirect('/contatos/')
     else:
-        return render(request, 'editaContatos.html', data)
+        return render(request, 'editaContato.html', data)
 
 @login_required
 def contato_remove(request, id):

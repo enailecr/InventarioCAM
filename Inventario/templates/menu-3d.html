@@ -82,7 +82,7 @@
 					<td>{{dispositivo.ipvirtual}}</td>
 					<td></td>
 					<td>{{dispositivo.status.status}}</td>
-					<td><input type="button" class="edit-button"></td>
+					<td><a href="{% url 'dispositivo_edita' dispositivo.id %}"><input type="button" class="edit-button"></a></td>
 			</tr>
 		{% endfor %}
 
