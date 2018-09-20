@@ -6,11 +6,19 @@ class InstituicaoForm(ModelForm):
     class Meta:
         model = Instituicao
         fields = '__all__'
+        labels = {
+            'num' : ('Número'),
+            'idEstatistica' : ('ID Estatística')
+        }
 
 class UnidadeForm(ModelForm):
     class Meta:
         model = Unidade
         fields = '__all__'
+        labels = {
+            'posicaogeo': ('Posição Geogŕafica'),
+            'num' : ('Número'),
+        }
 
 class AnotacaoForm(ModelForm):
     class Meta:

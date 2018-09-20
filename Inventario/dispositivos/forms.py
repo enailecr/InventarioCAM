@@ -5,3 +5,6 @@ class DispositivoForm(ModelForm):
     class Meta:
         model = Dispositivo
         fields = '__all__'
+        labels = {
+            'ipvirtual': ('IP Virtual'),
+        }
