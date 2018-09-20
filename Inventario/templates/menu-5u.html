@@ -58,6 +58,7 @@
       <th><font color="#FFFFFF">Sigla da Unidade</font></th>
       <th><font color="#FFFFFF">Sigla da Instituição</font></th>
       <th><font color="#FFFFFF">Nome</font></th>
+			<th></th>
     </tr>
   </thead>
 
@@ -67,6 +68,7 @@
 					<td>{{unidade.sigla}}</td>
           <td>{{unidade.instituicao.sigla}}</td>
 					<td>{{unidade.nome}}</td>
+					<td><input type="button" class="edit-button"></td>
 			</tr>
 		{% endfor %}
 

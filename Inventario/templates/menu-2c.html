@@ -59,6 +59,7 @@
       <th><font color="#FFFFFF">Tipo</font></th>
       <th><font color="#FFFFFF">Nome</font></th>
       <th><font color="#FFFFFF">Versão</font></th>
+			<th></th>
       </tr>
   </thead>
 
@@ -69,6 +70,7 @@
 					<td>{{componente.tipo.tipo}}</td>
 					<td>{{componente.nome}}</td>
 					<td>{{componente.versao}}</td>
+					<td><input type="button" class="edit-button"></td>
 			</tr>
 		{% endfor %}
   </tbody>
@@ -76,7 +78,7 @@
 <form>
 
    <div id="botao">
-	   
+
 		<a href="/componentes/add/"><input class="butn" type="button" value="Adicionar"></a>
 
    </div>

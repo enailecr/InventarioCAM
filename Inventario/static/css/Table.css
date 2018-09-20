@@ -75,3 +75,9 @@ th, td {
   background-image: linear-gradient(to bottom, #eb0707, #d40b0b);
   text-decoration: none;
 }
+
+.edit-button{
+  background-image:url("../images/pencil-edit-button.png");
+  width:20px;
+  float: right;
+}
