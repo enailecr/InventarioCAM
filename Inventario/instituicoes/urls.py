@@ -1,6 +1,6 @@
 from django.urls import path
 from django.conf.urls import include, url
-from .views import list_inst, list_unid, add_inst, add_unid, instituicao_novo, unidade_novo, unidade_edita, instituicao_edita, instituicao_remove, unidade_remove, nota_novo, add_nota, nota_edita, nota_remove, list_notas
+from .views import list_inst, list_unid, add_inst, add_unid, instituicao_novo, unidade_novo, unidade_edita, instituicao_edita, instituicao_remove, unidade_remove, nota_novo, add_nota, nota_edita, nota_remove, list_notas, unidade_busca, instituicao_busca
 
 urlpatterns = [
     path(r'', list_inst),
@@ -11,7 +11,9 @@ urlpatterns = [
     url(r'instituicao-edita/(?P<id>\d+)/$', instituicao_edita, name='instituicao_edita'),
     url(r'unidades/unidade-edita/(?P<id>\d+)/$', unidade_edita, name='unidade_edita'),
     url(r'instituicao-remove/(?P<id>\d+)/$', instituicao_remove, name='instituicao_remove'),
+    url(r'instituicao-busca/', instituicao_busca, name='instituicao_busca'),
     url(r'unidades/unidade-remove/(?P<id>\d+)/$', unidade_remove, name='unidade_remove'),
+    url(r'unidades/unidade-busca/', unidade_busca, name='unidade_busca'),
     path(r'unidades/notas/', list_notas),
     url(r'add-nota/(?P<idUnidade>\d+)/$', add_nota, name='add_nota'),
     url(r'unidades/nota-novo/', nota_novo, name='nota_novo'),

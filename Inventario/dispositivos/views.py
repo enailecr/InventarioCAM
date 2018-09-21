@@ -16,6 +16,14 @@ def list(request):
     return render(request, 'menu-3d.html', {'dispositivos': dispositivos})
 
 @login_required
+def dispositivo_busca(request):
+    dispositivos = Dispositivo.objects.all()
+    filter = request.GET.get('search')
+    if filter:
+        dispositivos = dispositivos.filter(unidade__icontains=filter)
+    return render(request, 'menu-3d.html', {'dispositivos': dispositivos})
+
+@login_required
 def dispositivo_novo(request):
     form = DispositivoForm(request.POST or None)
     if form.is_valid():

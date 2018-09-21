@@ -27,6 +27,22 @@ def list_unid(request):
     return render(request, 'menu-5u.html', {'unidades': unidades})
 
 @login_required
+def instituicao_busca(request):
+    instituicoes = Instituicao.objects.all()
+    filter = request.GET.get('search')
+    if filter:
+        instituicoes = instituicoes.filter(sigla__icontains=filter)
+    return render(request, 'menu-4i.html', {'instituicoes': instituicoes})
+
+@login_required
+def unidade_busca(request):
+    unidades = Unidade.objects.all()
+    filter = request.GET.get('search')
+    if filter:
+        unidades = unidades.filter(sigla__icontains=filter)
+    return render(request, 'menu-5u.html', {'unidades': unidades})
+
+@login_required
 def instituicao_novo(request):
     form = InstituicaoForm(request.POST or None)
     if form.is_valid():

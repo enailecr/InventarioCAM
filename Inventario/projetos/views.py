@@ -16,6 +16,14 @@ def list(request):
     return render(request, 'menu-1p.html', {'projetos': projetos})
 
 @login_required
+def projeto_busca(request):
+    projetos = Projeto.objects.all()
+    filter = request.GET.get('search')
+    if filter:
+        projetos = projetos.filter(sigla__icontains=filter)
+    return render(request, 'menu-1p.html', {'projetos': projetos})
+
+@login_required
 def projeto_novo(request):
     form = ProjetoForm(request.POST or None)
     if form.is_valid():

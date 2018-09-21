@@ -16,6 +16,14 @@ def list(request):
     return render(request, 'menu-contatos.html', {'contatos': contatos})
 
 @login_required
+def contato_busca(request):
+    contatos = Contato.objects.all()
+    filter = request.GET.get('search')
+    if filter:
+        contatos = contatos.filter(nome__icontains=filter)
+    return render(request, 'menu-contatos.html', {'contatos': contatos})
+
+@login_required
 def contato_novo(request):
     form = ContatoForm(request.POST or None)
     if form.is_valid():

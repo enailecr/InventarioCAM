@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'instituicoes',
     'contatos',
     'dispositivos',
+    'django_tables2',
 ]
 
 MIDDLEWARE = [

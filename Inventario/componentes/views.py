@@ -23,6 +23,15 @@ def list(request):
     return render(request, 'menu-2c.html', {'componentes': componentes})
 
 @login_required
+def componente_busca(request):
+    componentes = Componente.objects.all()
+    filter = request.GET.get('search')
+    print(filter)
+    if filter:
+        componentes = componentes.filter(nome__icontains=filter)
+    return render(request, 'menu-2c.html', {'componentes': componentes})
+
+@login_required
 def componente_edita(request, id):
     data = {}
     componente = Componente.objects.get(id=id)
