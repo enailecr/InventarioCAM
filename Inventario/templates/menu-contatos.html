@@ -68,8 +68,16 @@
 		{% for contato in contatos %}
 			<tr>
 					<td>{{contato.nome}}</td>
-          <td>{{contato.email}}</td>
-					<td>{{contato.telefone}}</td>
+					{% if contato.email == null %}
+						<td></td>
+					{%else%}
+						<td>{{contato.email}}</td>
+					{%endif%}
+					{% if contato.telefone == null %}
+						<td></td>
+					{%else%}
+						<td>{{ontato.telefone}}</td>
+					{%endif%}
 					<td><a href="{% url 'contato_edita' contato.id %}"><input type="button" class="edit-button"></a></td>
 					<td><a href="{% url 'contato_remove' contato.id %}"><input type="button" class="delete-button"></a></td>
 			</tr>

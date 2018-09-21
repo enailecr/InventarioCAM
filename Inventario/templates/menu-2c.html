@@ -71,7 +71,11 @@
 					<td>{{componente.sigla}}</td>
 					<td>{{componente.tipo.tipo}}</td>
 					<td>{{componente.nome}}</td>
-					<td>{{componente.versao}}</td>
+					{% if componente.versao == null %}
+						<td></td>
+					{%else%}
+						<td>{{componente.versao}}</td>
+					{%endif%}
 					<td><a href="{% url 'componente_edita' componente.id %}"><input type="button" class="edit-button"></a></td>
 					<td><a href="{% url 'componente_remove' componente.id %}"><input type="button" class="delete-button"></a></td>
 			</tr>
