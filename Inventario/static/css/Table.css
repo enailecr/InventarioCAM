@@ -87,3 +87,8 @@ th, td {
   width:20px;
   float: right;
 }
+.book-button{
+  background-image:url("../images/agenda.png");
+  width:20px;
+  float: right;
+}
