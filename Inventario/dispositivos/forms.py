@@ -4,7 +4,7 @@ from .models import Dispositivo
 class DispositivoForm(ModelForm):
     class Meta:
         model = Dispositivo
-        fields = '__all__'
+        fields = ('ip', 'ipvirtual', 'status', 'projeto', 'componente', 'unidade')
         labels = {
             'ipvirtual': ('IP Virtual'),
         }

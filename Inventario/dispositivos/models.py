@@ -12,6 +12,9 @@ class Dispositivo(models.Model):
     projeto = models.ForeignKey(Projeto, on_delete=models.CASCADE,)
     componente = models.ForeignKey(Componente, on_delete=models.CASCADE,)
     unidade = models.ForeignKey(Unidade, on_delete=models.CASCADE,)
+    core = models.CharField(max_length=25, blank=True, null=True)
+    web = models.CharField(max_length=25, blank=True, null=True)
+    atualizado = models.CharField(max_length=1, blank=True, null=True)
 
     def __str__(self):
         return self.ip
@@ -23,6 +26,6 @@ class StatusDispositivos(models.Model):
         return self.status
 
 class Anotacao(models.Model):
-    nota = models.CharField(max_length=255, blank=False, null=False)
+    nota = models.TextField( blank=False, null=False)
     unidade = models.ForeignKey(Unidade, on_delete=models.CASCADE)
     dispositivo = models.ForeignKey('Dispositivo', on_delete=models.CASCADE, blank=True, null=True)
