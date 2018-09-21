@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
+from .forms import UsuarioEditaForm
 
 def login(request):
     return render(request, 'login.html')
@@ -30,15 +31,15 @@ def usuario_novo(request):
 
 
 @login_required
-def usuario_edita(request, id):
+def usuario_edita(request):
     data = {}
-    usuario = Usuario.objects.get(id=id)
-    form = UsuarioForm(request.POST or None, instance=usuario)
+    usuario = request.user
+    form = UsuarioEditaForm(request.POST or None, instance=request.user)
     data['usuario'] = usuario
     data['form'] = form
     if request.method == 'POST':
-        if form.is_valid(): 
+        if form.is_valid():
             form.save()
-            return redirect('/usuarios/') #mudar
+            return redirect('/projetos/')
     else:
-        return render(request, 'editaPerfil.html', data)
+        return render(request, 'editaUsuario.html', data)

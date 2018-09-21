@@ -1,108 +1,88 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<title>cadastro usuarios</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Menu</title>
 
-	<link rel="stylesheet" type="text/css"
-	href="{% static 'images/icons/favicon.ico' %}" />
-	<link rel="stylesheet" type="text/css"
-	href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" />
-	<link rel="stylesheet" type="text/css"
-	href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}" />
-	<link rel="stylesheet" type="text/css"
-	href="{% static 'vendor/animate/animate.css' %}" />
-	<link rel="stylesheet" type="text/css"
-	href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}" />
-	<link rel="stylesheet" type="text/css"
-	href="{% static 'vendor/select2/select2.min.css' %}" />
-
-	<link rel="stylesheet" type="text/css"
-	href="{% static 'csscad/util.css' %}" />
-
-<link rel="stylesheet" type="text/css"
-	href="{% static 'csscad/main.css' %}" />
-
+	<!--<link rel="stylesheet" type="text/css" href="../css/style.css" />
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+    <link href="../css/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../fonts/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel = "stylesheet" type="text/css" href="../css/Table.css"/>
+	-->
+	<link rel="stylesheet" type="text/css" href="{% static 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/Table.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/fonts.css' %}" />
 </head>
 <body>
 
-	<div class="bg-contact100" style="background-image: url('../images/bg-01.jpg');">
-		<div class="container-contact100">
-			<div class="wrap-contact100">
-				<div class="contact100-pic js-tilt" data-tilt>
-					<a href="/"><img src="{% static 'images/logo.png' %}" alt="IMG"></a>
-				</div>
-
-				<form class="contact100-form validate-form" method="post" action="{% url 'usuario_edita' %}">
-					<span class="contact100-form-title">
-						<h2>Perfil de Usuário</h2>
-					</span>
-						{% csrf_token %}
-					<div class="wrap-input100 validate-input" data-validate = "Name is required">
-						<input class="input100" type="text" name="nome" placeholder="Nome" value="{{nome}}">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-user" aria-hidden="true"></i>
-						</span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "username is required">
-						<input class="input100" type="text" name="usuario" placeholder="Usuario">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-user" aria-hidden="true"></i>
-						</span>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
-					</div>
-
-					<div class="container-contact100-form-btn">
-						<button class="contact100-form-btn" type="submit">
-							Atualizar
-						</button>
-					</div>
-				</form>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+            <a> <img src="{% static 'images/logo.png' %}"/> </a>
 			</div>
+
+		<div id="menu">
+			<ul>
+				<li><a href="" title="">Perfil de Usuário</a></li>
+				<li class="current_page_item"><a  accesskey="1" title="">Inventário - CAM Tecnologia</a></li>
+				<li><a href="/contas/logout/" title="">SAIR</a></li>
+			</ul>
 		</div>
 	</div>
+</div>
+	<ul id="nav" >
+
+		<li><a href="/projetos/">Projeto</a></li>
+		<li><a href="/componentes/">Componentes</a></li>
+		<li><a href="/dispositivos/">Dispositivos</a>
+		<li><a href="/contatos/">Contatos</a>
+		<li><a href="/instituicoes/">Instituições</a>
+
+			<ul>
+				<li><a href="/instituicoes/unidades/">Unidades</a></li>
+			</ul>
+
+		</li>
 
 
+	</ul>
+	<div >
+			<head>
+					<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+					<title>Formulário Centralizado</title>
+					<style type="text/css">
+						* { margin: 0; padding: 0; font-family:Arial; font-size:9pt;}
+						#divCenter {
+								background-color: #e1e1e1;
+								width: 400px;
+								height: 85px;
+								left: 50%;
+								margin: -130px 0 0 -210px;
+								padding:10px;
+								position: absolute;
+								top: 50%; }
+					</style>
+				</head>
+				<body>
+						<div id="divCenter">
+								<h1>Editar Perfil</h1>
+        <form action="{% url 'usuario_edita' %}" method="post">
+            {% csrf_token %}
+
+            {{form.as_p}}
+
+            <button type="submit">Salvar alterações</button>
+
+        </form>
 
 
-<!--===============================================================================================-->
-	<script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../vendor/bootstrap/js/popper.js"></script>
-	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="../js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
+        </div>
+	</body>
+	</form>
+</div>
 
 </body>
 </html>
