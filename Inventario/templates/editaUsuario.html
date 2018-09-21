@@ -7,23 +7,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" type="text/css" 
+	<link rel="stylesheet" type="text/css"
 	href="{% static 'images/icons/favicon.ico' %}" />
-	<link rel="stylesheet" type="text/css" 
+	<link rel="stylesheet" type="text/css"
 	href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" />
-	<link rel="stylesheet" type="text/css" 
+	<link rel="stylesheet" type="text/css"
 	href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}" />
-	<link rel="stylesheet" type="text/css" 
+	<link rel="stylesheet" type="text/css"
 	href="{% static 'vendor/animate/animate.css' %}" />
-	<link rel="stylesheet" type="text/css" 
+	<link rel="stylesheet" type="text/css"
 	href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}" />
-	<link rel="stylesheet" type="text/css" 
+	<link rel="stylesheet" type="text/css"
 	href="{% static 'vendor/select2/select2.min.css' %}" />
 
-	<link rel="stylesheet" type="text/css" 
+	<link rel="stylesheet" type="text/css"
 	href="{% static 'csscad/util.css' %}" />
 
-<link rel="stylesheet" type="text/css" 
+<link rel="stylesheet" type="text/css"
 	href="{% static 'csscad/main.css' %}" />
 
 </head>
@@ -36,13 +36,13 @@
 					<a href="/"><img src="{% static 'images/logo.png' %}" alt="IMG"></a>
 				</div>
 
-				<form class="contact100-form validate-form" method="post" action="{% url 'usuario_edita' usuario.id %}">
+				<form class="contact100-form validate-form" method="post" action="{% url 'usuario_edita' %}">
 					<span class="contact100-form-title">
 						<h2>Perfil de Usuário</h2>
 					</span>
 						{% csrf_token %}
 					<div class="wrap-input100 validate-input" data-validate = "Name is required">
-						<input class="input100" type="text" name="nome" placeholder="Nome">
+						<input class="input100" type="text" name="nome" placeholder="Nome" value="{{nome}}">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
