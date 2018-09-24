@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Instituicao, Unidade
 from .forms import InstituicaoForm, UnidadeForm
 from django.contrib.auth.decorators import login_required
+import re
 
 @login_required
 def add_inst(request):
@@ -31,7 +32,12 @@ def instituicao_busca(request):
     instituicoes = Instituicao.objects.all()
     filter = request.GET.get('search')
     if filter:
-        instituicoes = instituicoes.filter(sigla__icontains=filter)
+        inst = []
+        inst = instituicoes.filter(sigla__icontains=filter)
+        for instituicao in instituicoes:
+            if re.search(filter, instituicao.nome, re.IGNORECASE):
+                inst.append(instituicao)
+        instituicoes = inst
     return render(request, 'menu-4i.html', {'instituicoes': instituicoes})
 
 @login_required
@@ -39,7 +45,12 @@ def unidade_busca(request):
     unidades = Unidade.objects.all()
     filter = request.GET.get('search')
     if filter:
-        unidades = unidades.filter(sigla__icontains=filter)
+        unid = []
+        unid = unidades.filter(sigla__icontains=filter)
+        for unidade in unidades:
+            if re.search(filter, unidade.nome, re.IGNORECASE):
+                inst.append(unidade)
+        unidades = unid
     return render(request, 'menu-5u.html', {'unidades': unidades})
 
 @login_required

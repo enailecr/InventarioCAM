@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Dispositivo
 from .forms import DispositivoForm
 from django.contrib.auth.decorators import login_required
+import re
 
 @login_required
 def add(request):
@@ -20,7 +21,11 @@ def dispositivo_busca(request):
     dispositivos = Dispositivo.objects.all()
     filter = request.GET.get('search')
     if filter:
-        dispositivos = dispositivos.filter(unidade__icontains=filter)
+        disp = []
+        for dispositivo in dispositivos:
+            if re.search(filter, dispositivo.unidade.sigla, re.IGNORECASE):
+                disp.append(dispositivo)
+        dispositivos = disp
     return render(request, 'menu-3d.html', {'dispositivos': dispositivos})
 
 @login_required

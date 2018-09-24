@@ -20,7 +20,12 @@ def projeto_busca(request):
     projetos = Projeto.objects.all()
     filter = request.GET.get('search')
     if filter:
-        projetos = projetos.filter(sigla__icontains=filter)
+        proj = []
+        proj = projetos.filter(sigla__icontains=filter)
+        for projeto in projetos:
+            if re.search(filter, projeto.nome, re.IGNORECASE):
+                proj.append(projeto)
+        projetos = proj
     return render(request, 'menu-1p.html', {'projetos': projetos})
 
 @login_required

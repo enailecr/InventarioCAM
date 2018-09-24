@@ -20,7 +20,12 @@ def contato_busca(request):
     contatos = Contato.objects.all()
     filter = request.GET.get('search')
     if filter:
-        contatos = contatos.filter(nome__icontains=filter)
+        cont = []
+        cont = contatos.filter(nome__icontains=filter)
+        for contato in contatos:
+            if re.search(filter, contato.email, re.IGNORECASE):
+                comp.append(contato)
+        contatos = cont
     return render(request, 'menu-contatos.html', {'contatos': contatos})
 
 @login_required
