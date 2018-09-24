@@ -56,29 +56,17 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 			<style type="text/css">
 				* { margin: 0; padding: 0; font-family:Arial; font-size:9pt;}
-				#divCenter { 
-						background-color: #e1e1e1; 
-						left: -450%; 
-						width: 140%;
-						height: 1	00%;
-						margin: 80px 0 0 -540px; 
-						padding:10px;
-						position: absolute; 
-						top: 50%; }
 			</style>
 		</head>
 		<body>
 			<div class="container">
 				<div class="row">
-				  <div class="col-md-6 img">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvzOpl3-kqfNbPcA_u_qEZcSuvu5Je4Ce_FkTMMjxhB-J1wWin-Q"  alt="" class="img-rounded">
-				  </div>
+				  
 				  <div class="col-md-6 details">
 					<blockquote>
-					  <h5>Usuário Cam Tecnologia</h5>
+					  <h3>Usuário Cam Tecnologia</h3>
 					  <small><cite title="Source Title">Verifique e edite suas informações aqui</i></cite></small>					</blockquote>
-					<p>
-					  <div id="divCenter">
+					  <div>
 											  <h1>Editar Perfil</h1>
 					  <form action="{% url 'usuario_edita' %}" method="post">
 						  {% csrf_token %}
@@ -87,7 +75,6 @@
 			  
 						  <button type="submit">Salvar alterações</button>
 			  
-					</p>
 				  </div>
 				</div>
 			  </div>
