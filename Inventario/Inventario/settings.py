@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'Inventario.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'InventarioCAM',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
+        'NAME': 'dev_inventario',
+        'USER': 'cam',
+        'PASSWORD': 'camtec',
+        'HOST': '10.255.254.10',
         'PORT': '3306',
     }
 }
