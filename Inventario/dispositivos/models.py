@@ -6,7 +6,7 @@ from instituicoes.models import Unidade
 # Create your models here.
 
 class Dispositivo(models.Model):
-    ip = models.CharField(max_length=25, blank=True, null=True)
+    ip = models.CharField(max_length=25, blank=False, null=False)
     ipvirtual = models.CharField(max_length=25, blank=True, null=True)
     status = models.ForeignKey('StatusDispositivos', on_delete=models.CASCADE,)
     projeto = models.ForeignKey(Projeto, on_delete=models.CASCADE,)
