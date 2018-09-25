@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Componente
 from .forms import ComponenteForm
 from django.contrib.auth.decorators import login_required
+import re
 
 @login_required
 def componente_novo(request):

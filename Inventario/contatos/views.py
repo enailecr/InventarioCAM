@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Contato
 from .forms import ContatoForm
 from django.contrib.auth.decorators import login_required
+import re
 
 @login_required
 def add(request):

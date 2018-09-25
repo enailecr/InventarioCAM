@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Projeto
 from .forms import ProjetoForm
 from django.contrib.auth.decorators import login_required
+import re
 
 @login_required
 def add(request):
