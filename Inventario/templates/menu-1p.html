@@ -54,6 +54,7 @@
 			
 	  <caption><h2>Projeto</h2><div align="right">
 			<form  action="/projetos/projeto-busca/" method ="submit" class="pesquisa" href="{% static 'css/style.css' %}">
+				<a id="botao" href="/projetos/add/"><input class="butn" type="button" value="Adicionar"></a>
 				<input  type="search" name="search" placeholder="Pesquise o projeto desejado">
 			<button type="submit">Pesquisar</button>
 			</form>
@@ -80,13 +81,6 @@
 			{% endfor %}
 	  </tbody>
 	</table>
-	<form>
-   <div id="botao">
-		<a href="/projetos/add/"><input class="butn" type="button" value="Adicionar"></a>
-   </div>
-</form>
-		</div>
-	</form>
 </div>
 
 </body>

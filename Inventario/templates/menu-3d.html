@@ -54,11 +54,14 @@
 		<table id="CAMTecnoligaTabela">
   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
   <caption><h2>Dispositivos</h2><div align="right">
-		<form  action="/dispositivos/dispositivo-busca/" method ="submit" class="pesquisa" href="{% static 'css/style.css' %}">
-			<input  type="search" name="search" placeholder="Pesquise o dispositibvo desejado">
-		<button type="submit">Pesquisar</button>
-		</form>
-	</div></caption>
+			<form  action="/dispositivos/dispositivo-busca/" method ="submit" class="pesquisa" href="{% static 'css/style.css' %}">
+				
+				<a align="center" id="botao" href="/projetos/add/"><input class="butn" type="button" value="Adicionar"></a>
+				
+				<input  type="search" name="search" placeholder="Pesquise o projeto desejado">
+			<button type="submit">Pesquisar</button>
+			</form>
+		</div></caption></caption>
   <thead>
     <tr>
       <th><font color="#FFFFFF">Instituição</font></th>
@@ -97,15 +100,14 @@
 					<td><a href="{% url 'dispositivo_remove' dispositivo.id %}"><input type="button" class="delete-button"></a></td>
 			</tr>
 		{% endfor %}
-
+		
   </tbody>
 </table>
-<form>
-   <div id="botao">
-		<a href="/dispositivos/add/"><input class="butn" type="button" value="Adicionar"></a>
-   </div>
-   		</form>
+
+				</div>
+			</form>
 		</div>
 		
-</body>
-</html>
+		</body>
+		</html>
+		

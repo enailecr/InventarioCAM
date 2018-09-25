@@ -55,6 +55,7 @@
   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
   <caption><h2>Instituições</h2><div align="right">
 		<form  action="/instituicoes/instituicao-busca/" method ="submit" class="pesquisa" href="{% static 'css/style.css' %}">
+			<a id="botao" href="/instituicoes/add/"><input class="butn" type="button" value="Adicionar"></a>
 			<input  type="search" name="search" placeholder="Pesquise a instituição desejado">
 		<button type="submit">Pesquisar</button>
 		</form>
@@ -80,12 +81,7 @@
 
   </tbody>
 </table>
-<form>
-   <div id="botao">
-		<a href="/instituicoes/add/"><input class="butn" type="button" value="Adicionar"></a>
-   </div>
-</form>
-		</div>
+	</div>
 		
 </body>
 </html>
