@@ -22,10 +22,9 @@ def contato_busca(request):
     filter = request.GET.get('search')
     if filter:
         cont = []
-        cont = contatos.filter(nome__icontains=filter)
         for contato in contatos:
-            if re.search(filter, contato.email, re.IGNORECASE):
-                comp.append(contato)
+            if (re.search(filter, contato.email, re.IGNORECASE) or re.search(filter, contato.nome, re.IGNORECASE)):
+                cont.append(contato)
         contatos = cont
     return render(request, 'menu-contatos.html', {'contatos': contatos})
 

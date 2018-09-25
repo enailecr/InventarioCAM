@@ -33,9 +33,8 @@ def instituicao_busca(request):
     filter = request.GET.get('search')
     if filter:
         inst = []
-        inst = instituicoes.filter(sigla__icontains=filter)
         for instituicao in instituicoes:
-            if re.search(filter, instituicao.nome, re.IGNORECASE):
+            if (re.search(filter, instituicao.nome, re.IGNORECASE) or re.search(filter, instituicao.sigla, re.IGNORECASE)):
                 inst.append(instituicao)
         instituicoes = inst
     return render(request, 'menu-4i.html', {'instituicoes': instituicoes})
@@ -46,10 +45,9 @@ def unidade_busca(request):
     filter = request.GET.get('search')
     if filter:
         unid = []
-        unid = unidades.filter(sigla__icontains=filter)
         for unidade in unidades:
-            if re.search(filter, unidade.nome, re.IGNORECASE):
-                inst.append(unidade)
+            if (re.search(filter, unidade.nome, re.IGNORECASE) or re.search(filter, unidade.sigla, re.IGNORECASE)):
+                unid.append(unidade)
         unidades = unid
     return render(request, 'menu-5u.html', {'unidades': unidades})
 

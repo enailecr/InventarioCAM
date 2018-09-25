@@ -29,9 +29,8 @@ def componente_busca(request):
     filter = request.GET.get('search')
     if filter:
         comp = []
-        comp = componentes.filter(nome__icontains=filter)
         for componente in componentes:
-            if re.search(filter, componente.sigla, re.IGNORECASE):
+            if (re.search(filter, componente.sigla, re.IGNORECASE) or re.search(filter, componente.nome, re.IGNORECASE)):
                 comp.append(componente)
         componentes = comp
     return render(request, 'menu-2c.html', {'componentes': componentes})
