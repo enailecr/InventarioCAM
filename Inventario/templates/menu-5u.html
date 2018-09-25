@@ -53,7 +53,12 @@
 	<div >
 		<table id="CAMTecnoligaTabela">
   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-  <caption><h2>Unidades</h2></caption>
+  <caption><h2>Unidades</h2><<div align="right">
+		<form  action="/instituicoes/unidades/unidade-busca/" method ="submit" class="pesquisa" href="{% static 'css/style.css' %}">
+			<input  type="search" name="search" placeholder="Pesquise a instituição desejado">
+		<button type="submit">Pesquisar</button>
+		</form>
+	</div></caption>
   <thead>
     <tr>
       <th><font color="#FFFFFF">Sigla da Unidade</font></th>
@@ -71,7 +76,7 @@
 					<td>{{unidade.sigla}}</td>
           <td>{{unidade.instituicao.sigla}}</td>
 					<td>{{unidade.nome}}</td>
-					<td><a href="#"><input type="button" onclick='insereTexto()' value='Inserir texto' class="book-button"></a></td>
+					<td><a href=""><input type="button" onclick='insereTexto()' value='Inserir texto' class="book-button"></a></td>
 					<td><a href="{% url 'unidade_edita' unidade.id %}"><input type="button" class="edit-button"></a></td>
 					<td><a href="{% url 'unidade_remove' unidade.id %}"><input type="button" class="delete-button"></a></td>
 			</tr>
@@ -85,34 +90,7 @@
    </div>
 </form>
 		</div>
-		<form action="/instituicoes/unidades/unidade-busca/" method ="submit" class="pesquisa" href="{% static 'css/style.css' %}">
-			<input type="search" name="search" placeholder="Pesquise o item desejado">
-			<button type="submit">Pesquisar</button>
-			  <style>
-			*{
-			margin: 0;
-			padding: 0;
-			}
-			.pesquisa{
-			width: 350px;
-			height: 40px;
-			margin: 10px auto;
-			padding: 5px 5px;
-			}
-			.texto{
-			width: 350px;
-			height: 40px;
-			font-family: 'Arial';
-			font-size: 20px;
-			}
-			.btn{
-			width: 15px;
-			height: 15px;
-			padding: 5px 5px;
-			cursor: pointer;
-			}
-
-			</style>
+		
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 			<title>Insert title here</title>
