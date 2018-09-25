@@ -13,6 +13,3 @@ class AnotacaoForm(ModelForm):
     class Meta:
         model = Anotacao
         fields = '__all__'
-        labels = {
-            'ipvirtual': ('IP Virtual'),
-        }
