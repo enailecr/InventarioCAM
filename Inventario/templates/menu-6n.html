@@ -71,8 +71,13 @@ jQuery(window).scroll(function () {
 	</ul>
 	<div >
 			
-        <caption><center><h2>Notas</h2></center><div>
-        </div>
+        <caption><center><h2>Notas</h2></center><div align="right">
+					<form  action="#" method ="submit" class="pesquisa" href="{% static 'css/style.css' %}">
+						<a id="botao" href="#"><input class="butn" type="button" value="Adicionar"></a>
+						<input  type="search" name="search" placeholder="Pesquise a nota desejada">
+					<button type="submit">Pesquisar</button>
+					</form>
+				</div></caption>
 	  </div>
             
 </div>
