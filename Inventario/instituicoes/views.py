@@ -117,7 +117,7 @@ def nota_novo(request):
 @login_required
 def add_nota(request, idUnidade):
     form = AnotacaoForm()
-    unidade = Unidade.objects.get(id=id).sigla
+    unidade = Unidade.objects.get(id=id)
     data = {'form' : form, 'unidade': unidade}
     return render(request, 'cadastroNota.html', data)
 
@@ -142,6 +142,11 @@ def nota_remove(request, id):
     return redirect('/instituicoes/unidades/notas/')
 
 @login_required
-def list_notas(request):
-    notas = Anotacao.objects.all()
-    return render(request, 'menu-6n.html', {'notas': notas})
+def list_notas(request, idUnidade):
+    todasNotas = Anotacao.objects.all()
+    notas = []
+    for nota in todasNotas:
+        if id == nota.unidade.GET(id):
+            notas.append(nota)
+    data = {'notas': notas, 'idUnidade' : idUnidade}
+    return render(request, 'menu-6n.html',data)

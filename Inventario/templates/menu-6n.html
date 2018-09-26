@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'fonts/fonts.css' %}" />
 		<link rel="stylesheet" type="text/css" href="{% static 'css/notes.css' %}" />
 		<link rel="stylesheet" type="text/css" href="{% static 'css/subir.css' %}" />
-	
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function(){
@@ -67,19 +67,19 @@ jQuery(window).scroll(function () {
 
 		</li>
 
-        
+
 	</ul>
 	<div >
-			
+
         <caption><center><h2>Notas</h2></center><div align="right">
 					<form  action="#" method ="submit" class="pesquisa" href="{% static 'css/style.css' %}">
-						<a id="botao" href="#"><input class="butn" type="button" value="Adicionar"></a>
+						<a id="botao" href="{% url 'add_nota' idUnidade %}"><input class="butn" type="button" value="Adicionar" size="2"></a>
 						<input  type="search" name="search" placeholder="Pesquise a nota desejada">
 					<button type="submit">Pesquisar</button>
 					</form>
 				</div></caption>
 	  </div>
-            
+
 </div>
 
 </body>
@@ -89,11 +89,12 @@ jQuery(window).scroll(function () {
 		</style>
 		</head>
 		<body>
-		
+
 		<div class="timeline">
 		  <div class="container left">
 			<div class="content">
 			  <h2>2017</h2>
+				<p><a href="#"><input type="button" class="edit-button"></a></p>
 			  <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
 			</div>
 		  </div>
@@ -128,6 +129,6 @@ jQuery(window).scroll(function () {
 			</div>
 		  </div>
 		</div>
-		
+
 		</body>
 </html>
