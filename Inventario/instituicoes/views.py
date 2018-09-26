@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .models import Instituicao, Unidade
 from .forms import InstituicaoForm, UnidadeForm
 from django.contrib.auth.decorators import login_required
+from dispositivos.models import Anotacao
+from dispositivos.forms import AnotacaoForm
 import re
 
 @login_required
@@ -141,5 +143,5 @@ def nota_remove(request, id):
 
 @login_required
 def list_notas(request):
-    notas = Nota.objects.all()
+    notas = Anotacao.objects.all()
     return render(request, 'menu-6n.html', {'notas': notas})
