@@ -29,6 +29,7 @@ class Anotacao(models.Model):
     nota = models.TextField( blank=False, null=False)
     unidade = models.ForeignKey(Unidade, on_delete=models.CASCADE)
     dispositivo = models.ForeignKey('Dispositivo', on_delete=models.CASCADE, blank=True, null=True)
+    removido = models.BooleanField(default=False)
     criadoEm = models.DateTimeField(auto_now_add=True)
     editadoEm = models.DateTimeField(auto_now=True)
     criadoPor = models.ForeignKey('auth.User', related_name='criadoPor', on_delete=models.PROTECT, editable=False, null=True)

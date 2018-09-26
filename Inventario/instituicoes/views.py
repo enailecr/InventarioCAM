@@ -115,6 +115,7 @@ def nota_novo(request, idUnidade):
         post = form.save(commit=False)
         post.criadoPor = request.user
         post.unidade = unidade
+        post.removido = False
         post.save()
     return redirect ('/instituicoes/unidades/notas/'+idUnidade)
 
@@ -125,24 +126,29 @@ def add_nota(request, idUnidade):
     return render(request, 'cadastroNota.html', data)
 
 @login_required
-def nota_edita(request):
+def nota_edita(request, id):
     data = {}
     nota = Anotacao.objects.get(id=id)
     form = AnotacaoForm(request.POST or None, instance=nota)
     data['nota'] = nota
     data['form'] = form
+    idUnidade = nota.unidade.id
     if request.method == 'POST':
         if form.is_valid():
-            form.save()
-        return redirect ('/instituicoes/unidades/notas/')
+            post = form.save(commit=False)
+            post.editadoPor = request.user
+            post.save()
+        return redirect ('/instituicoes/unidades/notas/'+ str(idUnidade))
     else:
         return render(request, 'editaNota.html', data)
 
 @login_required
 def nota_remove(request, id):
     nota = Anotacao.objects.get(id=id)
-    nota.delete()
-    return redirect('/instituicoes/unidades/notas/')
+    nota.removido=True
+    nota.save()
+    idUnidade = nota.unidade.id
+    return redirect('/instituicoes/unidades/notas/'+ str(idUnidade))
 
 @login_required
 def list_notas(request, idUnidade):
