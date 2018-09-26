@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'unidades/unidade-busca/', unidade_busca, name='unidade_busca'),
     url(r'unidades/notas/(?P<idUnidade>\d+)/$', list_notas, name='notas'),
     url(r'add-nota/(?P<idUnidade>\d+)/$', add_nota, name='add_nota'),
-    url(r'unidades/nota-novo/', nota_novo, name='nota_novo'),
+    url(r'unidades/nota-novo/(?P<idUnidade>\d+)/$', nota_novo, name='nota_novo'),
     url(r'unidades/nota-edita/(?P<id>\d+)/$', nota_edita, name='nota_edita'),
     url(r'unidades/nota-remove/(?P<id>\d+)/$', nota_remove, name='nota_remove'),
     path(r'unidades/', list_unid),

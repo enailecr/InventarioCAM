@@ -69,7 +69,7 @@
 				<body>
 						<div id="divCenter">
 								<h1>Adicionar anotação:</h1>
-        <form action="{% url 'nota_novo' %}" method="post">
+        <form action="{% url 'nota_novo' idUnidade %}" method="post">
             {% csrf_token %}
 
             {{form.as_p}}
