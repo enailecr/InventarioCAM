@@ -160,3 +160,17 @@ def list_notas(request, idUnidade):
             notas.append(nota)
     data = {'notas': notas, 'idUnidade' : idUnidade}
     return render(request, 'menu-6n.html',data)
+
+@login_required
+def nota_busca(request, idUnidade):
+    notas = Anotacao.objects.all()
+    filter = request.GET.get('search')
+    unidade = Unidade.objects.get(id=idUnidade)
+    if filter:
+        notes = []
+        for nota in notas:
+            if (re.search(filter, nota.nota, re.IGNORECASE) and nota.unidade == unidade):
+                notes.append(nota)
+        notas = notes
+    data = {'notas': notas, 'idUnidade' : idUnidade}
+    return render(request, 'menu-6n.html', data)

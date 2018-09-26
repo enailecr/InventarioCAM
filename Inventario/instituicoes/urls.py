@@ -1,6 +1,6 @@
 from django.urls import path
 from django.conf.urls import include, url
-from .views import list_inst, list_unid, add_inst, add_unid, instituicao_novo, unidade_novo, unidade_edita, instituicao_edita, instituicao_remove, unidade_remove, nota_novo, add_nota, nota_edita, nota_remove, list_notas, unidade_busca, instituicao_busca
+from .views import list_inst, list_unid, add_inst, add_unid, instituicao_novo, unidade_novo, unidade_edita, instituicao_edita, instituicao_remove, unidade_remove, nota_novo, add_nota, nota_edita, nota_remove, list_notas, unidade_busca, instituicao_busca, nota_busca
 
 urlpatterns = [
     path(r'', list_inst),
@@ -19,5 +19,6 @@ urlpatterns = [
     url(r'unidades/nota-novo/(?P<idUnidade>\d+)/$', nota_novo, name='nota_novo'),
     url(r'unidades/nota-edita/(?P<id>\d+)/$', nota_edita, name='nota_edita'),
     url(r'unidades/nota-remove/(?P<id>\d+)/$', nota_remove, name='nota_remove'),
+    url(r'unidades/nota-busca/(?P<idUnidade>\d+)/$', nota_busca, name='nota_busca'),
     path(r'unidades/', list_unid),
 ]
