@@ -77,7 +77,7 @@
 					<td>{{unidade.sigla}}</td>
           <td>{{unidade.instituicao.sigla}}</td>
 					<td>{{unidade.nome}}</td>
-					<td><a href="#"><input type="button" onclick='insereTexto()' value='Inserir texto' class="book-button"></a></td>
+					<td><a href="notas"><input type="button" class="book-button"></a></td>
 					<td><a href="{% url 'unidade_edita' unidade.id %}"><input type="button" class="edit-button"></a></td>
 					<td><a href="{% url 'unidade_remove' unidade.id %}"><input type="button" class="delete-button"></a></td>
 			</tr>
@@ -85,21 +85,6 @@
 
   </tbody>
 </table>
-   </div>
-</form>
-		</div>
-		
-		<head>
-			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-			<title>Insert title here</title>
-			<script type="text/javascript">
-				function insereTexto()
-					{document.getElementById('divTeste').innerHTML = '<input type="text" name="Nome" placeholder="Digite suas anoteações aqui" size="40" /> ';}
-			</script>
-		
-		</head>
-		<body>
-		<div id="divTeste"> </div>
-			</form>
+
 </body>
 </html>
