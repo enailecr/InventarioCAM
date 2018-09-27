@@ -92,3 +92,13 @@ th, td {
   width:20px;
   float: right;
 }
+.vermelho-button{
+  background-image:url("../images/vermelho.png");
+  width:20px;
+  float: right;
+  
+}.verde-button{
+  background-image:url("../images/verde.png");
+  width:20px;
+  float: right;
+}
