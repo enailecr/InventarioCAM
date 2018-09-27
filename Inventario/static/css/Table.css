@@ -1,3 +1,4 @@
+
 body {
   font: 75%/1.6 "Agency FB", Calibri, "Lucida Console", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
 }
@@ -6,11 +7,17 @@ table {
   border-collapse: collapse;
   width: 50em;
   border: 1px solid #a22428;
+  
+}
+table a{
+  color: #fff;
+  text-decoration:none;
 }
 thead {
   background-color:#a22428;
   border-top: 1px solid #a22428;
   border-bottom: 1px solid #a22428;
+  
 }
 tr:hover {
   background-color:#3d80df;
@@ -26,6 +33,7 @@ tr:nth-child(even) {
 th {
   font-weight: normal;
   text-align: left;
+  
 }
 th, td {
   padding: 0.1em 1em;
@@ -74,6 +82,7 @@ th, td {
   background-image: -o-linear-gradient(top, #eb0707, #d40b0b);
   background-image: linear-gradient(to bottom, #eb0707, #d40b0b);
   text-decoration: none;
+  
 }
 
 .edit-button{
