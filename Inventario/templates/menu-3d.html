@@ -93,8 +93,12 @@
 						<td></td>
 					{%else%}
 						<td>{{dispositivo.ipvirtual}}</td>
-					{%endif%}
-					<td></td>
+					{% endif %}
+					{% if dispositivo.atualizado == '0' %}
+						<td align = "center"><img src="{% static 'images/verde.png' %}"/> </td>
+					{% else %}
+						<td align = "center"><img src="{% static 'images/vermelho.png' %}"/> </td>
+					{% endif %}
 					<td>{{dispositivo.status.status}}</td>
 					<td><a href="{% url 'dispositivo_edita' dispositivo.id %}"><input type="button" class="edit-button"></a></td>
 					<td><a href="{% url 'dispositivo_remove' dispositivo.id %}"><input type="button" class="delete-button"></a></td>
