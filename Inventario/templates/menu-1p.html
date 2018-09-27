@@ -1,4 +1,5 @@
 {% load static %}
+{% load render_table from django_tables2 %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +52,7 @@
 	</ul>
 	<div >
 		<table id="CAMTecnoligaTabela">
-			
+
 	  <caption><h2>Projeto</h2><div align="right">
 			<form  action="/projetos/projeto-busca/" method ="submit" class="pesquisa" href="{% static 'css/style.css' %}">
 				<a id="botao" href="/projetos/add/"><input class="butn" type="button" value="Adicionar"></a>
@@ -59,9 +60,10 @@
 			<button type="submit">Pesquisar</button>
 			</form>
 		</div></caption>
-	  
+
   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	  <thead>
+	{% render_table table %}
+	  <!-- <thead>
 		<tr>
 		  <th><font color="#FFFFFF">Sigla</font></th>
 		  <th><font color="#FFFFFF">Nome</font></th>
@@ -79,7 +81,7 @@
 						<td><a href="{% url 'projeto_remove' projeto.id %}"><input type="button" class="delete-button"></a></td>
 				</tr>
 			{% endfor %}
-	  </tbody>
+	  </tbody> -->
 	</table>
 </div>
 

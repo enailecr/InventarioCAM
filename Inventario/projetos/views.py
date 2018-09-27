@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Projeto
 from .forms import ProjetoForm
+from .tables import ProjetoTable
+from django_tables2 import RequestConfig
 from django.contrib.auth.decorators import login_required
 import re
 
@@ -13,8 +15,9 @@ def add(request):
 
 @login_required
 def list(request):
-    projetos = Projeto.objects.all()
-    return render(request, 'menu-1p.html', {'projetos': projetos})
+    table = ProjetoTable(Projeto.objects.all())
+    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    return render(request, 'menu-1p.html', {'table': table})
 
 @login_required
 def projeto_busca(request):
