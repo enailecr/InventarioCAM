@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'contatos',
     'dispositivos',
     'django_tables2',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,7 @@ LOGOUT_REDIRECT_URL = '/'
 # SECURE_HSTS_SECONDS = 1
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_HSTS_PRELOAD = True
+
+CRONJOBS = [
+    ('*/60 * * * *', 'dispositivos.cron.MyCronJob')
+]
