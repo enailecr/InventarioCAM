@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from dispositivos.models import Anotacao
 from dispositivos.forms import AnotacaoForm
 import re
+from django_tables2 import RequestConfig
+from .tables import InstituicaoTable, UnidadeTable
 
 @login_required
 def add_inst(request):
@@ -21,13 +23,15 @@ def add_unid(request):
 
 @login_required
 def list_inst(request):
-    instituicoes = Instituicao.objects.all()
-    return render(request, 'menu-4i.html', {'instituicoes': instituicoes})
+    table = InstituicaoTable(Instituicao.objects.all())
+    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    return render(request, 'menu-4i.html', {'table': table})
 
 @login_required
 def list_unid(request):
-    unidades = Unidade.objects.all()
-    return render(request, 'menu-5u.html', {'unidades': unidades})
+    table = UnidadeTable(Unidade.objects.all())
+    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    return render(request, 'menu-5u.html', {'table': table})
 
 @login_required
 def instituicao_busca(request):
