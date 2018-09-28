@@ -4,6 +4,8 @@ from .models import Contato
 from .forms import ContatoForm
 from django.contrib.auth.decorators import login_required
 import re
+from django_tables2 import RequestConfig
+from .tables import ContatoTable
 
 @login_required
 def add(request):
@@ -13,8 +15,9 @@ def add(request):
 
 @login_required
 def list(request):
-    contatos = Contato.objects.all()
-    return render(request, 'menu-contatos.html', {'contatos': contatos})
+    table = ContatoTable(Contato.objects.all())
+    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    return render(request, 'menu-contatos.html', {'table': table})
 
 @login_required
 def contato_busca(request):

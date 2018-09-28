@@ -1,4 +1,5 @@
 {% load static %}
+{% load render_table from django_tables2 %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +61,8 @@
 		<button type="submit">Pesquisar</button>
 		</form>
 	</div></caption>
-  <thead>
+			{% render_table table %}
+  <!-- <thead>
     <tr>
       <th><font color="#FFFFFF">Nome</font></th>
       <th><font color="#FFFFFF">Email</font></th>
@@ -89,7 +91,7 @@
 			</tr>
 		{% endfor %}
 
-  </tbody>
+  </tbody> -->
 </table>
 		</div>
 </body>
