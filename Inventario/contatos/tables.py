@@ -1,4 +1,5 @@
 import django_tables2 as tables
+import django_filters
 from .models import Contato
 
 class ContatoTable(tables.Table):

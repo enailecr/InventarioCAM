@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'dispositivos',
     'django_tables2',
     'django_crontab',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

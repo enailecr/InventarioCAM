@@ -29,7 +29,9 @@ def contato_busca(request):
             if (re.search(filter, contato.email, re.IGNORECASE) or re.search(filter, contato.nome, re.IGNORECASE)):
                 cont.append(contato)
         contatos = cont
-    return render(request, 'menu-contatos.html', {'contatos': contatos})
+    table = ContatoTable(contatos)
+    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    return render(request, 'menu-contatos.html', {'table': table})
 
 @login_required
 def contato_novo(request):
