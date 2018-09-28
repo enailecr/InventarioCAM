@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .models import Componente
 from .forms import ComponenteForm
 from django.contrib.auth.decorators import login_required
+from django_tables2 import RequestConfig
+from .tables import ComponenteTable
 import re
 
 @login_required
@@ -20,8 +22,9 @@ def add(request):
 
 @login_required
 def list(request):
-    componentes = Componente.objects.all()
-    return render(request, 'menu-2c.html', {'componentes': componentes})
+    table = ComponenteTable(Componente.objects.all())
+    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    return render(request, 'menu-2c.html', {'table': table})
 
 @login_required
 def componente_busca(request):
