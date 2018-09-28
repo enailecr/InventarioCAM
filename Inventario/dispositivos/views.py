@@ -4,6 +4,8 @@ from .models import Dispositivo
 from .forms import DispositivoForm
 from django.contrib.auth.decorators import login_required
 import re
+from django_tables2 import RequestConfig
+from .tables import DispositivoTable
 
 @login_required
 def add(request):
@@ -13,8 +15,9 @@ def add(request):
 
 @login_required
 def list(request):
-    dispositivos = Dispositivo.objects.all()
-    return render(request, 'menu-3d.html', {'dispositivos': dispositivos})
+    table = DispositivoTable(Dispositivo.objects.all())
+    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    return render(request, 'menu-3d.html', {'table': table})
 
 @login_required
 def dispositivo_busca(request):

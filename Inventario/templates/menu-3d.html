@@ -1,4 +1,5 @@
 {% load static %}
+{% load render_table from django_tables2 %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,13 +56,15 @@
   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
   <caption><h2>Dispositivos</h2><div align="right">
 			<form  action="/dispositivos/dispositivo-busca/" method ="submit" class="pesquisa" href="{% static 'css/style.css' %}">
-				
+
 				<a align="center" id="botao" href="/dispositivos/add/"><input class="butn" type="button" value="Adicionar"></a>
-				
+
 				<input  type="search" name="search" placeholder="Pesquise o dispositivo desejado">
 			<button type="submit">Pesquisar</button>
 			</form>
 		</div></caption></caption>
+		{% render_table table %}
+<!--
   <thead>
     <tr>
       <th><font color="#FFFFFF">Instituição</font></th>
@@ -104,14 +107,13 @@
 					<td><a href="{% url 'dispositivo_remove' dispositivo.id %}"><input type="button" class="delete-button"></a></td>
 			</tr>
 		{% endfor %}
-		
-  </tbody>
+
+  </tbody> -->
 </table>
 
 				</div>
 			</form>
 		</div>
-		
+
 		</body>
 		</html>
-		
