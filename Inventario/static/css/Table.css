@@ -10,7 +10,6 @@ table {
   
 }
 table a{
-  color: #fff;
   text-decoration:none;
 }
 thead {
@@ -18,6 +17,10 @@ thead {
   border-top: 1px solid #a22428;
   border-bottom: 1px solid #a22428;
   
+}
+thead a{
+  color: #fff;
+  text-decoration:none;
 }
 tr:hover {
   background-color:#3d80df;
