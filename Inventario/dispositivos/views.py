@@ -29,7 +29,9 @@ def dispositivo_busca(request):
             if re.search(filter, dispositivo.unidade.sigla, re.IGNORECASE):
                 disp.append(dispositivo)
         dispositivos = disp
-    return render(request, 'menu-3d.html', {'dispositivos': dispositivos})
+    table = DispositivoTable(dispositivos)
+    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    return render(request, 'menu-3d.html', {'table': table})
 
 @login_required
 def dispositivo_novo(request):

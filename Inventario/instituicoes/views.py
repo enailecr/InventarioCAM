@@ -43,7 +43,9 @@ def instituicao_busca(request):
             if (re.search(filter, instituicao.nome, re.IGNORECASE) or re.search(filter, instituicao.sigla, re.IGNORECASE)):
                 inst.append(instituicao)
         instituicoes = inst
-    return render(request, 'menu-4i.html', {'instituicoes': instituicoes})
+    table = InstituicaoTable(instituicoes)
+    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    return render(request, 'menu-4i.html', {'table': table})
 
 @login_required
 def unidade_busca(request):
@@ -55,7 +57,9 @@ def unidade_busca(request):
             if (re.search(filter, unidade.nome, re.IGNORECASE) or re.search(filter, unidade.sigla, re.IGNORECASE)):
                 unid.append(unidade)
         unidades = unid
-    return render(request, 'menu-5u.html', {'unidades': unidades})
+    table = UnidadeTable(unidades)
+    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    return render(request, 'menu-5u.html', {'table': table})
 
 @login_required
 def instituicao_novo(request):

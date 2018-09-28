@@ -29,7 +29,9 @@ def projeto_busca(request):
             if (re.search(filter, projeto.nome, re.IGNORECASE) or re.search(filter, projeto.sigla, re.IGNORECASE)):
                 proj.append(projeto)
         projetos = proj
-    return render(request, 'menu-1p.html', {'projetos': projetos})
+    table = ProjetoTable(projetos)
+    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    return render(request, 'menu-1p.html', {'table': table})
 
 @login_required
 def projeto_novo(request):

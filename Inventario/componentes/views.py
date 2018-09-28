@@ -36,7 +36,9 @@ def componente_busca(request):
             if (re.search(filter, componente.sigla, re.IGNORECASE) or re.search(filter, componente.nome, re.IGNORECASE)):
                 comp.append(componente)
         componentes = comp
-    return render(request, 'menu-2c.html', {'componentes': componentes})
+    table = ComponenteTable(componentes)
+    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    return render(request, 'menu-2c.html', {'table': table})
 
 @login_required
 def componente_edita(request, id):
