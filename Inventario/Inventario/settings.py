@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'contatos',
     'dispositivos',
     'django_tables2',
+    'django_cron',
     'django_crontab',
     'django_filters',
 ]
@@ -149,5 +150,5 @@ LOGOUT_REDIRECT_URL = '/'
 # SECURE_HSTS_PRELOAD = True
 
 CRONJOBS = [
-    ('*/60 * * * *', 'dispositivos.cron.MyCronJob')
+    ('*/2 * * * *','dispositivos.cron.MyCronJob')
 ]
