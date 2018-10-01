@@ -97,6 +97,15 @@
     <div id="map"></div>
     <script>
 // Initialize and add the map
+
+function latitude(){  
+    var latitude = document.getElementsById('latitude').value;
+    console.log(latitude);
+}
+function longitude(){  
+    var longitude = document.getElementById('longitude').value;
+    console.log(longitude);
+}
 function initMap() {
   // The location of Uluru
   var uluru = {lat: -22.878556, lng: -43.271250};
