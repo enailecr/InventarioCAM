@@ -60,8 +60,7 @@ class Unidade(models.Model):
     bairro = models.CharField(max_length=55, blank=True, null=True)
     estado = models.CharField(max_length=2, blank=True, null=True, choices=ESTADOS)
     cidade = models.CharField(max_length=45, blank=True, null=True)
-    latitude = models.CharField(max_length=85, blank=True, null=True)
-    longitude = models.CharField(max_length=85, blank=True, null=True)
+    endereco = models.CharField(max_length=85, blank=True, null=True)
     instituicao = models.ForeignKey('Instituicao', on_delete=models.CASCADE,)
     contatos = models.ManyToManyField(Contato, blank=True)
 
