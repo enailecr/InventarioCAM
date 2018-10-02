@@ -113,13 +113,21 @@ function getLocation()
  
 function showPosition(position)
   {
-  lat=position.coords.latitude;
-  lon=position.coords.longitude;
+
+	x.innerHTML="Latitude: " + document.getElementById("id_latitude").value +
+         "<br>Longitude: " + document.getElementById("id_longitude").value; 
+
+				 
+  lat=document.getElementById("id_latitude").value;
+  lon=document.getElementById("id_longitude").value;
   latlon=new google.maps.LatLng(lat, lon)
   mapholder=document.getElementById('mapholder')
   mapholder.style.height='250px';
   mapholder.style.width='390px';
  
+
+
+	 
   var myOptions={
   center:latlon,zoom:14,
   mapTypeId:google.maps.MapTypeId.ROADMAP,
