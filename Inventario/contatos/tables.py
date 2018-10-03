@@ -5,4 +5,4 @@ from .models import Contato
 class ContatoTable(tables.Table):
     class Meta:
         model = Contato
-        fields = ('nome', 'email', 'telefone')
+        fields = ('nome', 'email', 'telefone','editar','excluir')
