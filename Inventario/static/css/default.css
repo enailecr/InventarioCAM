@@ -50,6 +50,7 @@ a
 .pagination {
     text-align: center;
 	margin-top: 1em;
+	
 }
 .pagination a{
 	text-decoration:none;
@@ -58,7 +59,17 @@ a
     padding: 0.5em 0.5em;
     color: #B9B9B9;
 	font-size: 1.3em;
-	background-color: rgb(119, 2, 2);
+	background-color: rgb(109, 5, 2);
+	border-radius: 20px;
+  }
+  .pagination li{
+	text-decoration:none;
+	margin: 0 0.1em;
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    color: #B9B9B9;
+	font-size: 1.3em;
+	background-color: rgb(109, 5, 2);
 	border-radius: 20px;
   }
 .pagination-number {
@@ -841,6 +852,7 @@ ul.contact li a.icon-rss:before
 	position: absolute;
 	top: 150px;
 	right: 0;
+	
 }
 
 #slider .indicator
