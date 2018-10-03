@@ -4,4 +4,4 @@ from .models import Componente
 class ComponenteTable(tables.Table):
     class Meta:
         model = Componente
-        fields = ('sigla', 'tipo', 'nome', 'versao')
+        fields = ('sigla', 'tipo', 'nome', 'versao','editar','excluir')

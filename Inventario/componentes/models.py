@@ -7,7 +7,10 @@ class Componente(models.Model):
     nome = models.CharField(max_length=255, blank=False, null=False)
     versao = models.CharField(max_length=10, blank=True, null=True)
     tipo = models.ForeignKey('TipoComponente', on_delete=models.CASCADE,)
-
+    editar = "teste"
+    # Editar = <input type="text">
+    excluir = "tata"
+    
     def __str__(self):
         return self.nome
 
