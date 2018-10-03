@@ -58,9 +58,9 @@ a
     display: inline-block;
     padding: 0.5em 0.5em;
     color: #B9B9B9;
-	font-size: 1.3em;
+	font-size: 1.0em;
 	background-color: rgb(109, 5, 2);
-	border-radius: 20px;
+	border-radius: 2px;
   }
   .pagination li{
 	text-decoration:none;
@@ -68,9 +68,9 @@ a
     display: inline-block;
     padding: 0.5em 0.5em;
     color: #B9B9B9;
-	font-size: 1.3em;
+	font-size: 1.0em;
 	background-color: rgb(109, 5, 2);
-	border-radius: 20px;
+	border-radius: 2px;
   }
 .pagination-number {
     padding: 0.5em 0.8em;
