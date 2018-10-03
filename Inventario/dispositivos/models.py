@@ -15,7 +15,10 @@ class Dispositivo(models.Model):
     core = models.CharField(max_length=25, blank=True, null=True)
     web = models.CharField(max_length=25, blank=True, null=True)
     atualizado = models.CharField(max_length=1, blank=True, null=True)
-
+    editar = "teste"
+    # Editar = <input type="text">
+    excluir = "tata"
+    
     def __str__(self):
         return self.ip
 
