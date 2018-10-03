@@ -44,6 +44,9 @@ class Instituicao(models.Model):
     estado = models.CharField(max_length=2, blank=True, null=True, choices=ESTADOS)
     cidade = models.CharField(max_length=45, blank=True, null=True)
     contatos = models.ManyToManyField(Contato, blank=True)
+    editar = "teste"
+    # Editar = <input type="text">
+    excluir = "tata"
 
     def __str__(self):
         return self.nome
@@ -64,6 +67,10 @@ class Unidade(models.Model):
     longitude = models.CharField(max_length=85, blank=True, null=True)
     instituicao = models.ForeignKey('Instituicao', on_delete=models.CASCADE,)
     contatos = models.ManyToManyField(Contato, blank=True)
+    editar = "teste"
+    # Editar = <input type="text">
+    excluir = "tata"
+    nota = "botao nota"
 
     def __str__(self):
         return self.nome

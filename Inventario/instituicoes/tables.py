@@ -4,9 +4,9 @@ from .models import Instituicao, Unidade
 class InstituicaoTable(tables.Table):
     class Meta:
         model = Instituicao
-        fields = ('sigla', 'nome')
+        fields = ('sigla', 'nome','editar','excluir')
 
 class UnidadeTable(tables.Table):
     class Meta:
         model = Unidade
-        fields = ('instituicao', 'sigla', 'nome')
+        fields = ('instituicao', 'sigla', 'nome','editar','nota','excluir')
