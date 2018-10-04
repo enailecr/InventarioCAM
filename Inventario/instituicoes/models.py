@@ -44,9 +44,9 @@ class Instituicao(models.Model):
     estado = models.CharField(max_length=2, blank=True, null=True, choices=ESTADOS)
     cidade = models.CharField(max_length=45, blank=True, null=True)
     contatos = models.ManyToManyField(Contato, blank=True)
-    editar = "teste"
+    #editar = "teste"
     # Editar = <input type="text">
-    excluir = "tata"
+    #excluir = "tata"
 
     def __str__(self):
         return self.nome
