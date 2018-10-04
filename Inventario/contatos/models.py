@@ -6,8 +6,5 @@ class Contato(models.Model):
     email = models.EmailField()
     nome = models.CharField(max_length=200, blank=False, null=False)
     telefone = models.CharField(max_length=20, blank=True, null=True)
-    editar = "teste"
-    # Editar = <input type="text">
-    excluir = "tata"
     def __str__(self):
         return self.nome
