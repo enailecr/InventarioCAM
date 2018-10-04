@@ -4,13 +4,6 @@
 <html>
 <head>
 	<title>Menu</title>
-
-	<!--<link rel="stylesheet" type="text/css" href="../css/style.css" />
-	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-    <link href="../css/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../fonts/fonts.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel = "stylesheet" type="text/css" href="../css/Table.css"/>
-	-->
 	<link rel="stylesheet" type="text/css" href="{% static 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}" />
@@ -64,51 +57,6 @@
 			</form>
 		</div></caption></caption>
 		{% render_table table %}
-<!--
-  <thead>
-    <tr>
-      <th><font color="#FFFFFF">Instituição</font></th>
-      <th><font color="#FFFFFF">Unidade</font></th>
-      <th><font color="#FFFFFF">Projeto</font></th>
-      <th><font color="#FFFFFF">Componente</font></th>
-      <th><font color="#FFFFFF">IP</font></th>
-      <th><font color="#FFFFFF">Core</font></th>
-      <th><font color="#FFFFFF">Web</font></th>
-      <th><font color="#FFFFFF">Extras</font></th>
-      <th><font color="#FFFFFF">Atualizado</font></th>
-      <th><font color="#FFFFFF">Status</font></th>
-			<th></th>
-			<th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-		{% for dispositivo in dispositivos %}
-			<tr>
-					<td>{{dispositivo.unidade.instituicao.sigla}}</td>
-					<td>{{dispositivo.unidade.sigla}}</td>
-					<td>{{dispositivo.projeto.nome}}</td>
-					<td>{{dispositivo.componente.nome}}</td>
-					<td>{{dispositivo.ip}}</td>
-					<td></td>
-					<td></td>
-					{% if dispositivo.ipvirtual == null %}
-						<td></td>
-					{%else%}
-						<td>{{dispositivo.ipvirtual}}</td>
-					{% endif %}
-					{% if dispositivo.atualizado == '0' %}
-						<td align = "center"><img src="{% static 'images/verde.png' %}"/> </td>
-					{% else %}
-						<td align = "center"><img src="{% static 'images/vermelho.png' %}"/> </td>
-					{% endif %}
-					<td>{{dispositivo.status.status}}</td>
-					<td><a href="{% url 'dispositivo_edita' dispositivo.id %}"><input type="button" class="edit-button"></a></td>
-					<td><a href="{% url 'dispositivo_remove' dispositivo.id %}"><input type="button" class="delete-button"></a></td>
-			</tr>
-		{% endfor %}
-
-  </tbody> -->
 </table>
 
 				</div>

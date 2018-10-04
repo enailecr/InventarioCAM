@@ -5,11 +5,6 @@
 <head>
 	<title>Menu</title>
 
-	<!--<link rel="stylesheet" type="text/css" href="../css/style.css" />
-	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-    <link href="../css/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../fonts/fonts.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel = "stylesheet" type="text/css" href="../css/Table.css"/>
 	-->
 	<link rel="stylesheet" type="text/css" href="{% static 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
@@ -62,33 +57,6 @@
 		</form>
 	</div></caption>
 	{% render_table table %}
-  <!-- <thead>
-    <tr>
-      <th><font color="#FFFFFF">Sigla</font></th>
-      <th><font color="#FFFFFF">Tipo</font></th>
-      <th><font color="#FFFFFF">Nome</font></th>
-      <th><font color="#FFFFFF">Versão</font></th>
-			<th></th>
-			<th></th>
-      </tr>
-  </thead>
-
-  <tbody>
-     {% for componente in componentes %}
-			<tr>
-					<td>{{componente.sigla}}</td>
-					<td>{{componente.tipo.tipo}}</td>
-					<td>{{componente.nome}}</td>
-					{% if componente.versao == null %}
-						<td></td>
-					{%else%}
-						<td>{{componente.versao}}</td>
-					{%endif%}
-					<td><a href="{% url 'componente_edita' componente.id %}"><input type="button" class="edit-button"></a></td>
-					<td><a href="{% url 'componente_remove' componente.id %}"><input type="button" class="delete-button"></a></td>
-			</tr>
-		{% endfor %}
-  </tbody> -->
 </table>
 
 </div>

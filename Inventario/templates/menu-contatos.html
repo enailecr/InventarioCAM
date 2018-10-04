@@ -5,13 +5,6 @@
 <html>
 <head>
 	<title>Menu</title>
-
-	<!--<link rel="stylesheet" type="text/css" href="../css/style.css" />
-	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-    <link href="../css/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../fonts/fonts.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel = "stylesheet" type="text/css" href="../css/Table.css"/>
-	-->
 	<link rel="stylesheet" type="text/css" href="{% static 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}" />
@@ -63,36 +56,6 @@
 		</form>
 	</div></caption>
 			{% render_table table %}
-  <!-- <thead>
-    <tr>
-      <th><font color="#FFFFFF">Nome</font></th>
-      <th><font color="#FFFFFF">Email</font></th>
-      <th><font color="#FFFFFF">Telefone</font></th>
-			<th></th>
-			<th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-		{% for contato in contatos %}
-			<tr>
-					<td>{{contato.nome}}</td>
-					{% if contato.email == null %}
-						<td></td>
-					{%else%}
-						<td>{{contato.email}}</td>
-					{%endif%}
-					{% if contato.telefone == null %}
-						<td></td>
-					{%else%}
-						<td>{{ontato.telefone}}</td>
-					{%endif%}
-					<td><a href="{% url 'contato_edita' contato.id %}"><input type="button" class="edit-button"></a></td>
-					<td><a href="{% url 'contato_remove' contato.id %}"><input type="button" class="delete-button"></a></td>
-			</tr>
-		{% endfor %}
-
-  </tbody> -->
 </table>
 		</div>
 </body>
