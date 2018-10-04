@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Menu</title>
+	<title>Editar Contato</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}" />
@@ -61,7 +61,7 @@
 				</head>
 				<body>
 						<div id="divCenter">
-								<h1>Editar Componente:</h1>
+								<h1>Editar Contato:</h1>
         <form action="{% url 'contato_edita' contato.id %}" method="post">
             {% csrf_token %}
 
