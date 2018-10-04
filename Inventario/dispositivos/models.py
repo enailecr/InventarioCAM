@@ -15,49 +15,18 @@ class Dispositivo(models.Model):
     core = models.CharField(max_length=25, blank=True, null=True)
     web = models.CharField(max_length=25, blank=True, null=True)
     atualizado = models.CharField(max_length=1, blank=True, null=True)
-    #editar = models.ForeignKey('EditarDispositivo', on_delete=models.CASCADE,)
- 
-    #editar = "tes"
-    #editar = models.type('EditarDispositivo', on_delete=models.CASCADE,)
-
-    #editar = <input type="text">
-    #excluir = "tata"
+    
     
     def __str__(self):
         return self.ip;
 
-    # def ativo(self):
-    #     if self.atualizado == "1":
-    #        return "Ativo";
-    #     else:
-    #         return "Inativo";
+
 
 class StatusDispositivos(models.Model):
     status = models.CharField(max_length=45, blank=False, null=False)
 
     def __str__(self):
         return self.status;
-
-# class atualizadoDispositivos(models.Model):
-#     atualizado = models.CharField(max_length=45, blank=False, null=False)
-
-#     def __str__(self):
-#         if self.atualizado == "1":
-#            return "Ativo";
-#         else:
-#             return "Inativo";
-
-
-# class EditarDispositivo(models.Model):
-#     editar = models.CharField(max_length=45, blank=False, null=False)
-
-#     def __str__(self):
-#         return "<a href=\"#\">Teste</a>";
-#         #if self.status == 1:
-        #    return "Ativo" + str(self.status);
-        #else:
-        #    return "Inativo" + str(self.status);
-              
             
 class Anotacao(models.Model):
     nota = models.TextField( blank=False, null=False)
