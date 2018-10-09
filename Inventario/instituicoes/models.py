@@ -31,7 +31,7 @@ ESTADOS = (
     ('TO', 'Tocantins'))
 
 class Instituicao(models.Model):
-    sigla = models.CharField(max_length=35, blank=False, null=False)
+    sigla = models.CharField('Sigla Isnt',max_length=35, blank=False, null=False)
     nome = models.CharField(max_length=255, blank=False, null=False)
     telefone = models.CharField(max_length=15, blank=True, null=True)
     website = models.CharField(max_length=50, blank=True, null=True)
@@ -52,7 +52,7 @@ class Instituicao(models.Model):
         return self.nome
 
 class Unidade(models.Model):
-    sigla = models.CharField(max_length=35, blank=False, null=False)
+    sigla = models.CharField('Sigla Unid',max_length=35, blank=False, null=False)
     nome = models.CharField(max_length=255, blank=False, null=False)
     telefone = models.CharField(max_length=15, blank=True, null=True)
     website = models.CharField(max_length=50, blank=True, null=True)
