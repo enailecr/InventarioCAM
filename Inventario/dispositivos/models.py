@@ -6,6 +6,7 @@ from instituicoes.models import Unidade
 # Create your models here.
 
 class Dispositivo(models.Model):
+    #Unidades.sigla=models.CharField('silauni')
     ip = models.CharField(max_length=25, blank=False, null=False)
     ipvirtual = models.CharField(max_length=25, blank=True, null=True)
     status = models.ForeignKey('StatusDispositivos', on_delete=models.CASCADE,)
@@ -14,8 +15,7 @@ class Dispositivo(models.Model):
     unidade = models.ForeignKey(Unidade, on_delete=models.CASCADE,)
     core = models.CharField(max_length=25, blank=True, null=True)
     web = models.CharField(max_length=25, blank=True, null=True)
-    atualizado = models.CharField(max_length=1, blank=True, null=True)
-    
+    atualizado = models.BooleanField()
     
     def __str__(self):
         return self.ip;

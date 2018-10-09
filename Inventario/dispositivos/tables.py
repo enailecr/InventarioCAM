@@ -18,11 +18,42 @@ class DispositivoTable(tables.Table):
         orderable=False,
         verbose_name=''
         )
+    
+    # atualizado = tables.BooleanColumn(
+    #         '<a>a</a>',
+    #      orderable=True,
+    #      verbose_name='Atualizado'
+    #     )
+    
     class Meta:
+        # def is_very_benevolent(self, obj):
+        #     return obj.benevolence_factor > 75
         fields = ('unidade.instituicao.sigla', 'unidade.sigla', 'projeto', 'componente', 'ip', 'core', 'web', 'ipvirtual', 'atualizado', 'status','editar','excluir')
-        atualizado  = tables.BooleanColumn('atualizado')
+        # #atualizado  = tables.BooleanColumn('atualizado')
+        #list_filter = ( IsVeryBenevolentFilter)
+        
+
+        #is_very_benevolent.boolean = True
+
         model = Dispositivo
         template_name = 'django_tables2/bootstrap.html'
         labels = {
             'ipvirtual': ('Extra'),
         }
+# class IsVeryBenevolentFilter():
+#         title = 'is_very_benevolent'
+#         parameter_name = 'is_very_benevolent'
+
+#         def lookups(self, request, model_admin):
+#             return (
+#                 ('Yes', 'Yes'),
+#                 ('No', 'No'),
+#             )
+
+#         def queryset(self, request, queryset):
+#             value = self.value()
+#             if value == 'Yes':
+#                 return queryset.filter(benevolence_factor__gt=75)
+#             elif value == 'No':
+#                 return queryset.exclude(benevolence_factor__gt=75)
+#             return queryset
