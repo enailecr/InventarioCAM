@@ -15,7 +15,7 @@ class Dispositivo(models.Model):
     unidade = models.ForeignKey(Unidade, on_delete=models.CASCADE,)
     core = models.CharField(max_length=25, blank=True, null=True)
     web = models.CharField(max_length=25, blank=True, null=True)
-    atualizado = models.BooleanField(null = False)
+    atualizado = models.BooleanField(null=True)
 
     
     def __str__(self):
